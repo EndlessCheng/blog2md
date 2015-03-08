@@ -19,7 +19,15 @@ HEADERS = {
     'User-Agent': "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0",
 }
 COMMON_EXTRACT_PAIR_LIST = [
+    ('div', 'article_manage'),
+    ('div', 'related-posts'),
+    ('div', 'relatedposts'),
+    ('div', 'author_info'),
+    ('div', 'navigation'),
+    ('ul', 'article_next_prev'),
+    ('div', 'digg'),
     ('noscript', ''),
+    ('div', 'ds-ssr'),
     ('a', 'dsq-brlink'),  # Disqus
     # ('p', 'copyright'),
 ]
@@ -35,7 +43,10 @@ def get_valid_file_name(file_name):
 
 
 def get_article_text(article_soup, article_tag='div', article_class='post-content', extract_pair_list=None):
-    article_content = article_soup.find(article_tag, class_=article_class)
+    article_content = article_soup.find(article_tag, class_=article_class) or article_soup.find(article_tag,
+                                                                                                id=article_class)
+    if article_content is None:
+        raise u"未找到正文，请确认填写是否正确（如 '-', '_'）"
     extract_pair_list = extract_pair_list or []
     extract_pair_list.extend(COMMON_EXTRACT_PAIR_LIST)
     for tag, class_ in extract_pair_list:

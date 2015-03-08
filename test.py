@@ -46,32 +46,36 @@ import blog2md
 #     blog2md.article_to_md(*article)
 # print ""
 
-# b6 = blog2md.Blog(
-#     "http://blog.csdn.net/wxg694175346/article/list/",
-#     article_tag='span',
-#     article_class='link_title',
-# )
-# for index, article in enumerate(b6.get_all_articles(), 1):
-#     print index,
-#     blog2md.article_to_md(*article)
-# print ""
+b6 = blog2md.Blog(
+    "http://blog.csdn.net/wxg694175346/article/list/",
+    article_tag='span',
+    article_class='link_title',
+)
+for index, article in enumerate(b6.get_all_articles(), 1):
+    print index,
+    blog2md.article_to_md(*article, article_class='article_details')
+print ""
 
-# b7 = blog2md.Blog(
-#     "http://www.xysay.com/page/",
-#     article_tag='h2',
-#     article_class='h1',
-# )
-# for index, article in enumerate(b7.get_all_articles(), 1):
-#     print index,
-#     blog2md.article_to_md(*article)
-# print ""
+b7 = blog2md.Blog(
+    "http://www.xysay.com/page/",
+    article_tag='h2',
+    article_class='h1',
+)
+for index, article in enumerate(b7.get_all_articles(), 1):
+    print index,
+    extract_pair_list = [
+        ('div', 'mbx'),
+        ('div', 'datetime'),
+    ]
+    blog2md.article_to_md(*article, article_class='content', extract_pair_list=extract_pair_list)
+print ""
 
 b8 = blog2md.Blog(
     "http://www.findspace.name/page/",
 )
 for index, article in enumerate(b8.get_all_articles(), 1):
     print index,
-    blog2md.article_to_md(*article, article_class='single-post')
+    blog2md.article_to_md(*article, article_class='single_post')
 print ""
 
 b9 = blog2md.Blog(
@@ -84,7 +88,6 @@ for index, article in enumerate(b9.get_all_articles(), 1):
     print index,
     extract_pair_list = [
         ('div', 'about-author clearfix'),
-        ('div', 'ds-ssr'),
     ]
     blog2md.article_to_md(*article, article_class='section', extract_pair_list=extract_pair_list)
 print ""
