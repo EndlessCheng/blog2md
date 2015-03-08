@@ -2,35 +2,41 @@
 import blog2md
 
 b = blog2md.Blog(
-"http://jianyan.me/",
-article_tag='section',
+    "http://jianyan.me/page/",
+    first_page_url="http://jianyan.me/",
+    article_tag='section',
 )
 for article in b.get_all_articles():
     blog2md.article_to_md(article)
+print u"所有文章已下载完毕"
 print ""
 
 b2 = blog2md.Blog(
-    "https://www.byvoid.com/",
+    "https://www.byvoid.com/blog/page/",
     article_class='post hentry clearfix',
     title_class='post_header_link',
 )
 for article in b2.get_all_articles():
     blog2md.article_to_md(article)
+print u"所有文章已下载完毕"
 print ""
 
-b3 = blog2md.Blog(
-    "https://blog.cee.moe/",
-    verify=False,
-)
-for article in b3.get_all_articles():
-    blog2md.article_to_md(article)
-print ""
+# b3 = blog2md.Blog(
+#     "https://blog.cee.moe/page/",
+#     verify=False,
+# )
+# for article in b3.get_all_articles():
+#     blog2md.article_to_md(article)
+# print u"所有文章已下载完毕"
+# print ""
 
 b4 = blog2md.Blog(
-    "http://www.wdk.pw/",
+    "http://www.wdk.pw/page/",
+    start_page=16,
 )
 for article in b4.get_all_articles():
     blog2md.article_to_md(article)
+print u"所有文章已下载完毕"
 print ""
 
 b5 = blog2md.Blog(
@@ -40,6 +46,7 @@ b5 = blog2md.Blog(
 for index, article in enumerate(b5.get_all_articles(), 1):
     print index,
     blog2md.article_to_md(article)
+print u"所有文章已下载完毕"
 print ""
 
 b6 = blog2md.Blog(

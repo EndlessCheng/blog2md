@@ -95,7 +95,7 @@ class Blog:
         try:
             if self.url_with_page:
                 start_page = self.start_page
-                first_url = None
+                url_set = set()
                 while True:
                     if start_page == 1 and self.first_page_url is not None:
                         article_head_soup_list = self.get_all_article_head_soup(self.first_page_url)
@@ -108,10 +108,9 @@ class Blog:
                         if not self.is_valid_url(article_url):
                             continue
 
-                        if first_url is None:
-                            first_url = article_url
-                        elif article_url == first_url:
+                        if article_url in url_set:
                             return
+                        url_set.add(article_url)
 
                         print u""
                         print u"解析 %s" % article_url
