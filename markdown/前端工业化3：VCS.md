@@ -1,0 +1,43 @@
+#  前端工业化3：VCS
+
+[ Yuguo ](http://yuguo.us) 2013年 11月 26日
+
+任何慎重地对待编程的程序员和团队都会使用VCS（主要是Git或者SVN），主要有这样几个作用：
+
+  * 对于程序员个人，记录代码避免丢失，方便查看修改并回溯，分支同一个代码仓库中的不同需求，记录小型里程碑 
+  * 对于团队协作来说，VCS的自动合并能省去我们95%的合并代码工作量 
+  * 对于代码审查者来说，方便监视主干代码的修改，并接受或者拒绝提交的代码 
+  * 通过使用一些行为钩子，可以在VCS行为之前或者之后自动触发其它事件 
+
+我在加入ISUX团队之前是一个菜鸟学生，从来没有使用过VCS，对于当时的我来说，SVN就只有一个作用： ** 合并代码到主干 ** 。
+
+所以当时的我既累又容易出错，因为我使用SVN的方法完全错误：
+
+  * 在trunk上直接开发 
+  * 完成一个完整的需求才commit一次 
+  * 只commit这个需求需要的文件和代码，人工检查 
+  * 代码库中残留越来越多没有提交的脏代码 
+
+我没有利用到SVN的其它功能：频繁记录代码里程碑，多个分支切换，让这些外部信息从大脑里释放，保持代码库的干净。但是随着我需要接入的项目越来越多，越来越需要快
+速在多个项目切换，并且也开始使用其它VCS（Git），我开始对VCS有了更好的理解。 **
+VCS并不只是帮助代码合并的团队工具，也是个人管理代码的很好方式。 **
+
+我现在非常喜欢使用Git管理版本，因为它跟SVN有一个完全不同的地方是它是分布式的，完整的代码库存在在每一台部署了代码库的机器上，我在本地切换分支，新建分支
+非常快，秒级生效，而且无需网络就可以commit代码。最后，世界上最好的开源代码社区是使用Git搭建（Github），你还有什么理由不使用Git呢？
+
+关于各种VCS的用法和实践，其实我不用在本文一一说明，因为资料已经太多。推荐阅读：
+
+  1. [ Git分支管理策略 ](http://www.ruanyifeng.com/blog/2012/07/git.html) 。 
+  2. [ SVN最佳实践 ](http://www.tigris.org/scdocs/SVNTips.html.zh-cn)
+  3. [ Git flow开发流程 ](http://ihower.tw/blog/archives/5140)
+
+[ Bigpipe用Nodejs的实现 → ](/weblog/bigpipe-in-nodejs/) [ ← 前端工业化2：缓存 ](/weblog
+/frontend-industrialize-2/)
+
+Please enable JavaScript to view the [ comments powered by Disqus.
+](http://disqus.com/?ref_noscript) [ comments powered by  Disqus
+](http://disqus.com)
+
+© 2009 – 2014 Yuguo. Powered by [ Jekyll ](https://github.com/mojombo/jekyll)
+and host by [ Github ](https://github.com/yuguo) 。
+

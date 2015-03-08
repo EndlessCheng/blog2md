@@ -1,0 +1,46 @@
+#  webview页面制作经验
+
+[ Yuguo ](http://yuguo.us) 2013年 02月 02日
+
+因为工作中做到iOS内嵌页面，以后也会越来越多地遇到，所以打算总结一下这方面的经验。
+
+##  切图的时候，不要把文字切到图中
+
+我看到有的同事切图的时候把文字也切到图里，包括普通图和@2x的图。这样做其实很不好，因为：
+
+  1. 设计搞中的字体可能跟iOS实际的字体不一样，二者在同一个屏幕出现的时候就会很违和。比如文字用了iOS字体，后面的一个按钮中的文字是微软雅黑，囧。。。 
+  2. 更重要的是，99%的情况下，文字一定会模糊。系统对文字的渲染比对图片的渲染圆滑而智能很多，而且性能也好很多，尽量使用字体。 
+  3. 可以公用图片，少图，app尺寸更小，下载更快。 
+  4. 能用CSS3的就CSS3，整个按钮CSS3。 
+
+##  不要CSS3和图片拼接
+
+也是看别人的代码里出现的，一个三角+圆角的仿iOS按钮，使用了图片+CSS3，这时候在retina屏上很容易看出模糊+清晰的一个边缘差别，加之图片里的RGB
+颜色与CSS写定的RGB颜色也有误差。就会感觉三角是补丁。
+
+##  以@2x为基准开始设计稿
+
+以@2x也就是640px宽创建设计稿时，要注意各种线条要偶数，也就是说，一条1px的线应该改为2px。
+
+##  cssgaga
+
+使用cssgaga的@2x->1倍图功能，PS导出的@2X图自动生成1倍图，然后代码中写定对1倍图的引用，最后cssgaga自动生成对@2x图的媒体查询cs
+s代码，非常方便。1 css file for 2 screen.
+
+##  使用移动端专有reset
+
+对于会在远程服务器端维护的页面，应尽可能减少css代码体积，和dom节点的复杂度。
+
+##  少使用有性能问题的css属性
+
+[ 那些耗费比较大的CSS属性 ](http://www.w3cplus.com/blog/605.html)
+
+[ M型社会和低智商社会 → ](/weblog/m-society/) [ ← 关于favicon的思考 ](/weblog/favicon/)
+
+Please enable JavaScript to view the [ comments powered by Disqus.
+](http://disqus.com/?ref_noscript) [ comments powered by  Disqus
+](http://disqus.com)
+
+© 2009 – 2014 Yuguo. Powered by [ Jekyll ](https://github.com/mojombo/jekyll)
+and host by [ Github ](https://github.com/yuguo) 。
+
