@@ -50,7 +50,7 @@ def get_article_text(article_soup, article_tag='div', article_class='post-conten
     return article_soup
 
 
-def article_to_md(article_soup, article_tag='div', article_class='post-content', extract_pair_list=None):
+def article_to_md(article_soup, url, article_tag='div', article_class='post-content', extract_pair_list=None):
     dir_path = os.path.join(os.getcwd(), "markdown")  # or name it by self.url
     if not os.path.isdir(dir_path):
         os.makedirs(dir_path)
@@ -65,15 +65,19 @@ def article_to_md(article_soup, article_tag='div', article_class='post-content',
                                          extract_pair_list=extract_pair_list).decode('utf-8'))
     f = open(file_path, 'w')
     f.write(md_text)
+
+    if platform.system() == 'Windows':
+        f.write("#### 原文：[%s](%s)" % (url, url))
+
     f.close()
 
     print u"" + file_path.decode('gbk')
 
 
-def article_url_to_md(url, article_tag='div', article_class='post-content', verify=True, extract_pair_list=None):
-    soup = BeautifulSoup(session.get(url, headers=HEADERS, verify=verify).content)
-    extract_pair_list = extract_pair_list or []
-    article_to_md(soup, article_tag=article_tag, article_class=article_class, extract_pair_list=extract_pair_list)
+# def article_url_to_md(url, article_tag='div', article_class='post-content', verify=True, extract_pair_list=None):
+#     soup = BeautifulSoup(session.get(url, headers=HEADERS, verify=verify).content)
+#     extract_pair_list = extract_pair_list or []
+#     article_to_md(soup, url, article_tag=article_tag, article_class=article_class, extract_pair_list=extract_pair_list)
 
 
 class Blog:
@@ -144,7 +148,7 @@ class Blog:
                         s = session.get(article_url, headers=HEADERS, verify=self.verify)
                         s.raise_for_status()
                         article_soup = BeautifulSoup(s.content)
-                        yield article_soup
+                        yield (article_soup, article_url)
                     start_page += 1
             else:
                 article_head_soup_list = self.get_all_article_head_soup(self.url)
@@ -162,7 +166,7 @@ class Blog:
                     s = session.get(article_url, headers=HEADERS, verify=self.verify)
                     s.raise_for_status()
                     article_soup = BeautifulSoup(s.content)
-                    yield article_soup
+                    yield (article_soup, article_url)
         except requests.HTTPError:
             print u"所有文章已下载完毕"
             return

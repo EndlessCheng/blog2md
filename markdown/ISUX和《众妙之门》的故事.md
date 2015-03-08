@@ -98,3 +98,4 @@ native-2/)
   4. 利用好零碎时间：dropbox，mindjet，google doc等 
   5. 分解任务，凡事先做一半，再做剩下的事情中的一半 
 
+#### 原文：[http://yuguo.us/weblog/isux-and-smashing-book/](http://yuguo.us/weblog/isux-and-smashing-book/)

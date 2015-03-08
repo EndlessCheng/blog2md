@@ -90,3 +90,4 @@ C也是更胜一筹，比起XML这种外部DSL同样更简洁（XML有大量重�
 
 比如jQuery的设计就是对JavaScript的语言扩充。
 
+#### 原文：[http://yuguo.us/weblog/ruby/](http://yuguo.us/weblog/ruby/)

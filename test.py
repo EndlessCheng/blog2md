@@ -96,7 +96,7 @@ for index, article in enumerate(b10.get_all_articles(), 1):
     extract_pair_list = [
         ('p', 'previous-next-nav'),
     ]
-    blog2md.article_to_md(article, article_class='single-post', extract_pair_list=extract_pair_list)
+    blog2md.article_to_md(*article, article_class='single-post', extract_pair_list=extract_pair_list)
 print ""
 
 # b11 = blog2md.Blog(

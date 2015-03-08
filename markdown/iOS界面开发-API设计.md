@@ -16,3 +16,4 @@
 
 在大型项目中，界面会有三种方式承载在项目中：nib，或者storyboard，或者编程的方式绘制。
 
+#### 原文：[http://yuguo.us/weblog/ios-ui-development-api/](http://yuguo.us/weblog/ios-ui-development-api/)

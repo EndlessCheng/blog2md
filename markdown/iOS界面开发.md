@@ -60,3 +60,4 @@
 所以本篇文章算是一个预告，自己在过去的界面开发中积累了一些经验，所以后面会分几篇文章沉淀一下。大部分内容都是自己已经整理的一些资料，然后进行一些编排。我个人
 主要是负责iOS端的代码，所以经验也只适用于iOS。
 
+#### 原文：[http://yuguo.us/weblog/ios-ui-development/](http://yuguo.us/weblog/ios-ui-development/)
