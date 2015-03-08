@@ -90,13 +90,3 @@ C也是更胜一筹，比起XML这种外部DSL同样更简洁（XML有大量重�
 
 比如jQuery的设计就是对JavaScript的语言扩充。
 
-[ iOS界面开发 → ](/weblog/ios-ui-development/) [ ← 我从《炉石传说》学到的 ](/weblog/hearth-
-stone/)
-
-Please enable JavaScript to view the [ comments powered by Disqus.
-](http://disqus.com/?ref_noscript) [ comments powered by  Disqus
-](http://disqus.com)
-
-© 2009 – 2014 Yuguo. Powered by [ Jekyll ](https://github.com/mojombo/jekyll)
-and host by [ Github ](https://github.com/yuguo) 。
-

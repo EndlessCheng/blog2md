@@ -98,13 +98,3 @@ native-2/)
   4. 利用好零碎时间：dropbox，mindjet，google doc等 
   5. 分解任务，凡事先做一半，再做剩下的事情中的一半 
 
-[ 《编写可维护的JavaScript》——野生JavaScript程序员必读 → ](/weblog/maintainable-javascript/)
-[ ← 《轻公司》 ](/weblog/fast-company/)
-
-Please enable JavaScript to view the [ comments powered by Disqus.
-](http://disqus.com/?ref_noscript) [ comments powered by  Disqus
-](http://disqus.com)
-
-© 2009 – 2014 Yuguo. Powered by [ Jekyll ](https://github.com/mojombo/jekyll)
-and host by [ Github ](https://github.com/yuguo) 。
-

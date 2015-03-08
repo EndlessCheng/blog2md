@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 __author__ = 'Endless'
-__version__ = '1.0.0'
+__version__ = '2.0.0'
 
 import urlparse
 from bs4 import BeautifulSoup
@@ -18,6 +18,11 @@ INVALID_CHAR_LIST = '\\/:*?"<>|\r\n'
 HEADERS = {
     'User-Agent': "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0",
 }
+COMMON_EXTRACT_PAIR_LIST = [
+    ('noscript', ''),
+    ('a', 'dsq-brlink'),  # Disqus
+    # ('p', 'copyright'),
+]
 
 session = requests.session()
 
@@ -29,7 +34,23 @@ def get_valid_file_name(file_name):
     return file_name
 
 
-def article_to_md(article_soup):
+def get_article_text(article_soup, article_tag='div', article_class='post-content', extract_pair_list=None):
+    article_content = article_soup.find(article_tag, class_=article_class)
+    extract_pair_list = extract_pair_list or []
+    extract_pair_list.extend(COMMON_EXTRACT_PAIR_LIST)
+    for tag, class_ in extract_pair_list:
+        extract_list = article_content.find_all(tag, class_=class_)
+        for extract in extract_list:
+            extract.extract()
+    # print article
+    article_soup.body.extract()
+    article_soup.head.insert_after(article_soup.new_tag('body'))
+    article_soup.body.append(article_content)
+    # print article_soup
+    return article_soup
+
+
+def article_to_md(article_soup, article_tag='div', article_class='post-content', extract_pair_list=None):
     dir_path = os.path.join(os.getcwd(), "markdown")  # or name it by self.url
     if not os.path.isdir(dir_path):
         os.makedirs(dir_path)
@@ -39,7 +60,9 @@ def article_to_md(article_soup):
         article_title = article_title.encode('gbk')
     # print article_title.decode('gbk')
     file_path = os.path.join(dir_path, article_title)
-    md_text = html2text(article_soup.decode('utf-8'))
+    extract_pair_list = extract_pair_list or []
+    md_text = html2text(get_article_text(article_soup, article_tag=article_tag, article_class=article_class,
+                                         extract_pair_list=extract_pair_list).decode('utf-8'))
     f = open(file_path, 'w')
     f.write(md_text)
     f.close()
@@ -47,9 +70,10 @@ def article_to_md(article_soup):
     print u"" + file_path.decode('gbk')
 
 
-def article_url_to_md(url, verify=True):
+def article_url_to_md(url, article_tag='div', article_class='post-content', verify=True, extract_pair_list=None):
     soup = BeautifulSoup(session.get(url, headers=HEADERS, verify=verify).content)
-    article_to_md(soup)
+    extract_pair_list = extract_pair_list or []
+    article_to_md(soup, article_tag=article_tag, article_class=article_class, extract_pair_list=extract_pair_list)
 
 
 class Blog:
@@ -102,6 +126,7 @@ class Blog:
                     else:
                         article_head_soup_list = self.get_all_article_head_soup(self.url + str(start_page))
                     if article_head_soup_list is None:
+                        print u"所有文章已下载完毕"
                         return
                     for article_head_soup in article_head_soup_list:
                         article_url = self.get_article_url(article_head_soup)
@@ -109,6 +134,7 @@ class Blog:
                             continue
 
                         if article_url in url_set:
+                            print u"所有文章已下载完毕"
                             return
                         url_set.add(article_url)
 
@@ -123,6 +149,7 @@ class Blog:
             else:
                 article_head_soup_list = self.get_all_article_head_soup(self.url)
                 if article_head_soup_list is None:
+                    print u"所有文章已下载完毕"
                     return
                 for article_head_soup in article_head_soup_list:
                     article_url = self.get_article_url(article_head_soup)
@@ -137,6 +164,10 @@ class Blog:
                     article_soup = BeautifulSoup(s.content)
                     yield article_soup
         except requests.HTTPError:
+            print u"所有文章已下载完毕"
+            return
+        except requests.ConnectionError:
+            print u"网络异常，解析中断"
             return
 
     def get_title_soup(self, soup):
