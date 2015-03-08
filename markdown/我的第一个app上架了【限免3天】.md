@@ -1,0 +1,40 @@
+#  我的第一个app上架了【限免3天】
+
+[ Yuguo ](http://yuguo.us) 2013年 06月 05日
+
+我的进度大概是这样的，去年11月开始学习做iOS开发，并且在本地调试。今年2月份注册开发者账号，开始真机调试，在5月初的时候程序1.0版完工准备上线了，然后
+打包提交。我等待了7天的时间之后，被苹果告知app的名字侵权。
+
+因为我做的是英雄联盟的攻略app，所以我叫“联盟大师”，但是苹果说我的app名字或者描述或者元数据涉嫌侵权，让我改成“appname - for
+英雄联盟”。
+
+我就想那就不叫联盟吧，改成了“LoL攻略”，又提交等待了7天，告诉我还是一样的问题……
+
+我又改，那就叫for 英雄联盟吧，改成了“LoL攻略 - for 英雄联盟”，又焦灼等待了7天，还是不通过，已经习惯了好吗……
+
+最后无奈改成“撸大师 - for 英雄联盟”，这。下。大。家。满。意。了。吧！
+
+就在昨天，终于通过了审核，乎~
+
+为庆祝第一个app上架，限免3天，8号恢复6元价格。
+
+欢迎英雄联盟爱好者下载，求好评，求批评，如果实在有需求，我会继续更新！说真的，好评差评我都不会太介意，只要有人评价，我就有更新的动力了哦也~
+
+最后贴一下下载地址和二维码，欢迎下载：
+
+[ https://itunes.apple.com/cn/app/lu-da-shi-for-ying-xiong-
+lian/id646299086?mt=8 ](https://itunes.apple.com/cn/app/lu-da-shi-for-ying-
+xiong-lian/id646299086?mt=8)
+
+![](/files/2013/06/lol-app.jpg)
+
+[ 33号铺停止更新 → ](/weblog/33pu-stop-update/) [ ← 《布道之道》 ](/weblog/driving-
+technical-change/)
+
+Please enable JavaScript to view the [ comments powered by Disqus.
+](http://disqus.com/?ref_noscript) [ comments powered by  Disqus
+](http://disqus.com)
+
+© 2009 – 2014 Yuguo. Powered by [ Jekyll ](https://github.com/mojombo/jekyll)
+and host by [ Github ](https://github.com/yuguo) 。
+
