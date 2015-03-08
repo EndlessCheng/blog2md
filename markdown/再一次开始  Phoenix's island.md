@@ -1,0 +1,20 @@
+[ 2014-01-02 ](/2014/01/02/new-start/)
+
+#  再一次开始 
+
+换博客程序的想法早就有了。不愧是不折腾会死星人，一路从 wordpress.com 换到独立的 WordPress 再到 Jekyll，13年8月份的时候还自己写了个博客程序 /w\ 
+
+不过无奈自己能力不够，Node.js 写的博客程序也不是那么舒服。WordPress 看过源码之后才发现比自己想象中的复杂得多——不然也不会成为最受欢迎的 CMS+Blog 系统。 
+
+前段时间 [ +Bob Yuan ](https://plus.google.com/u/0/+BobYuan/) 来找我注册域名，我顺便推荐了 Hexo 给他。不过惭愧的是那时候我也没有用过 Hexo… 虽然很想用。2014新年当天晚上在 [ 少将 ](https://plus.google.com/u/0/103175359999284392656/) 家和 [ C菊 ](https://plus.google.com/u/0/+CeeCirno/) ， [ Zht ](https://plus.google.com/u/0/+ZhtKannagi/) ， [ 色枫铃 ](https://plus.google.com/u/0/102594404609241222783/) 以及 [ JOJO ](https://plus.google.com/u/0/117271460125855897345/) 一起看红白吃火锅，吃到开心的时候来邮件通知说 MultaCOM 机房的机器上线了要我去配置。 
+
+当我搞定服务器的时候其他人都吃完收桌子了QAQ 所以只好继续帮客户迁移虚拟机。我自己的服务器也在凤凰城 SecuredServers 机房，所以这次也是顺便一起迁过来。整理了一下，除了自己写的几个 Node.js 程序，也就剩下 [ 鹦鹉螺号 ](http://www.seainsight.me) 了。写了好长时间的博客，170篇文章全部被 Google 收录。 <del> 虽然大部分是转载的 </del>
+
+果然时间长了就是舍不得扔，平时拿来转载一些好玩的东西也是可以的。何况这里还有一大堆分享的文件以及 List Yo’s files 这等好用的插件在。不过还有不少其他人的 WordPress，看了一圈发现都好久不更新了——而且都是一开始写了两篇后面就再也没更新的。所以就丢在原来的服务器上不管了。至于这个博客，想来想去还是放在 Github 上。一个是 Uptime 一个是 CDN， <del> 最重要的是不要钱 </del>
+
+于是就趁着复习周刚开始的这几天空闲把这个 Hexo 搞定吧。罗嗦了这么多，估计今天早上想写文章的思路早就不知道丢哪去了。既然有了专门的 WordPress 来做转载记录，那么这里就尽量保证原创吧～代码写了不少了不过一直没想好如何记录学到的很多经验。目测…还是需要个类似知识库的东西啊。好羡慕猫大大的 [ Felix Wiki ](http://wiki.felixc.at)
+
+嗯.. 于是就这样。 
+
+[ Life ](/categories/Life/)
+#### 原文：[https://blog.phoenixlzx.com/2014/01/02/new-start/](https://blog.phoenixlzx.com/2014/01/02/new-start/)

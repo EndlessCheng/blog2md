@@ -42,6 +42,9 @@ def get_article_text(article_soup, article_tag='div', article_class='post-conten
         extract_list = article_content.find_all(tag, class_=class_)
         for extract in extract_list:
             extract.extract()
+        extract_list = article_content.find_all(tag, id=class_)
+        for extract in extract_list:
+            extract.extract()
     # print article
     article_soup.body.extract()
     article_soup.head.insert_after(article_soup.new_tag('body'))
@@ -75,9 +78,9 @@ def article_to_md(article_soup, url, article_tag='div', article_class='post-cont
 
 
 # def article_url_to_md(url, article_tag='div', article_class='post-content', verify=True, extract_pair_list=None):
-#     soup = BeautifulSoup(session.get(url, headers=HEADERS, verify=verify).content)
-#     extract_pair_list = extract_pair_list or []
-#     article_to_md(soup, url, article_tag=article_tag, article_class=article_class, extract_pair_list=extract_pair_list)
+# soup = BeautifulSoup(session.get(url, headers=HEADERS, verify=verify).content)
+# extract_pair_list = extract_pair_list or []
+# article_to_md(soup, url, article_tag=article_tag, article_class=article_class, extract_pair_list=extract_pair_list)
 
 
 class Blog:
