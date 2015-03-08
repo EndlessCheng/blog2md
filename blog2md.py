@@ -22,10 +22,22 @@ COMMON_EXTRACT_PAIR_LIST = [
     ('div', 'article_manage'),
     ('div', 'related-posts'),
     ('div', 'relatedposts'),
+    ('section', 'related-post'),
     ('div', 'author_info'),
     ('div', 'navigation'),
     ('ul', 'article_next_prev'),
+    ('li', 'comment-count'),
+    ('td', 'gutter'),
+
+    ('img', 'code_img_closed'),
+    ('img', 'code_img_opened'),
+    ('span', 'cnblogs_code_collapse'),
+
+    ('div', 'about-author clearfix'),
+    ('nav', 'article-nav clearfix'),
+    ('div', 'jiathis_style'),
     ('div', 'digg'),
+    ('p', 'postfoot'),
     ('noscript', ''),
     ('div', 'ds-ssr'),
     ('a', 'dsq-brlink'),  # Disqus
@@ -42,8 +54,11 @@ def get_valid_file_name(file_name):
     return file_name
 
 
-def get_article_text(article_soup, article_tag='div', article_class='post-content', extract_pair_list=None):
-    article_content = article_soup.find(article_tag, class_=article_class) or article_soup.find(article_tag,
+def get_article_text(article_soup, article_tag='div', article_class=None, extract_pair_list=None):
+    if article_class is None:
+        article_content = article_soup.find(article_tag)
+    else:
+        article_content = article_soup.find(article_tag, class_=article_class) or article_soup.find(article_tag,
                                                                                                 id=article_class)
     if article_content is None:
         raise u"未找到正文，请确认填写是否正确（如 '-', '_'）"
@@ -64,7 +79,7 @@ def get_article_text(article_soup, article_tag='div', article_class='post-conten
     return article_soup
 
 
-def article_to_md(article_soup, url, article_tag='div', article_class='post-content', extract_pair_list=None):
+def article_to_md(article_soup, url, article_tag='div', article_class=None, extract_pair_list=None):
     dir_path = os.path.join(os.getcwd(), "markdown")  # or name it by self.url
     if not os.path.isdir(dir_path):
         os.makedirs(dir_path)

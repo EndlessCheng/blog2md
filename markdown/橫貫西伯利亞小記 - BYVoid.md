@@ -1,0 +1,84 @@
+九月  ** 14 ** 2014 
+
+  *   *   *     * [ 俄羅斯 ](/blog/tag/俄羅斯)
+    * [ 西伯利亞 ](/blog/tag/西伯利亞)
+    * [ 亞寒帶針葉林 ](/blog/tag/亞寒帶針葉林)
+    * [ 西伯利亞大鐵路 ](/blog/tag/西伯利亞大鐵路)
+    * [ 滿洲里 ](/blog/tag/滿洲里)
+    * [ 齊齊哈爾 ](/blog/tag/齊齊哈爾)
+    * [ 後貝加爾斯克 ](/blog/tag/後貝加爾斯克)
+    * [ 赤塔 ](/blog/tag/赤塔)
+    * [ 布里亞特 ](/blog/tag/布里亞特)
+    * [ 烏蘭烏德 ](/blog/tag/烏蘭烏德)
+    * [ 貝加爾湖 ](/blog/tag/貝加爾湖)
+    * [ 伊爾庫茨克 ](/blog/tag/伊爾庫茨克)
+    * [ 奧爾洪島 ](/blog/tag/奧爾洪島)
+    * [ 新西伯利亞 ](/blog/tag/新西伯利亞)
+    * [ 克拉斯諾亞爾斯克 ](/blog/tag/克拉斯諾亞爾斯克)
+    * [ 葉卡捷琳堡 ](/blog/tag/葉卡捷琳堡)
+    * [ 神聖殉道者修道院 ](/blog/tag/神聖殉道者修道院)
+    * [ 弗拉基米爾 ](/blog/tag/弗拉基米爾)
+    * [ 蘇茲達爾 ](/blog/tag/蘇茲達爾)
+    * [ 金環 ](/blog/tag/金環)
+    * [ 莫斯科 ](/blog/tag/莫斯科)
+    * [ 庫爾斯克火車站 ](/blog/tag/庫爾斯克火車站)
+    * [ 聖彼得堡 ](/blog/tag/聖彼得堡)
+    * [ 彼得宮城 ](/blog/tag/彼得宮城)
+    * [ 彼得羅扎沃茨克 ](/blog/tag/彼得羅扎沃茨克)
+    * [ 奧涅加湖 ](/blog/tag/奧涅加湖)
+    * [ 基日島 ](/blog/tag/基日島)
+    * [ 凱姆 ](/blog/tag/凱姆)
+    * [ 索洛韋茨基羣島 ](/blog/tag/索洛韋茨基羣島)
+    * [ 摩爾曼斯克 ](/blog/tag/摩爾曼斯克)
+    * [ 北極圈 ](/blog/tag/北極圈)
+    * [ 迪拜 ](/blog/tag/迪拜)
+    * [ 環遊世界 ](/blog/tag/環遊世界)
+
+#  [ 橫貫西伯利亞小記 ](/blog/trans-siberia-travel-notes)
+
+從小我就喜歡一個人看家裏面牆上掛着的中國地圖，看遍了中國的省份以後，我開始關注鄰國，尤其是遙遠的北方。中學學了世界地理以後，纔知道這塊地方叫做西伯利亞，而且它的氣候是 [ 亞寒帶針葉林氣候 ](https://zh.wikipedia.org/wiki/%E5%89%AF%E6%9E%81%E5%9C%B0%E5%A4%A7%E9%99%86%E6%80%A7%E6%B0%94%E5%80%99) ——光是聽這個名字就足以讓我產生極大的興趣了。後來我知道了有橫貫西伯利亞大鐵路，便經常幻想能夠親自體驗一下。等到了今年七月，趁着大學畢業的這個假期，我終於踏上了 [ 貫穿西伯利亞的旅程 ](https://mapsengine.google.com/map/u/0/edit?mid=zy2MvlDC8uhM.kYFcVjqRDqS8) 。 
+
+![](https://www.byvoid.com/upload/blog/siberia/siberia.jpg)
+
+2014年7月10日，我從北京北站坐火車出發前往滿洲里，途徑齊齊哈爾，開始了長達一個月的征途。7月13日早晨，我坐着國際大巴穿過滿洲里口岸，到達了俄羅斯邊境小鎮後貝加爾斯克。在後貝加爾斯克火車站坐上了火車，經過赤塔，7月14日到達了我的第一站——布里亞特共和國的首府烏蘭烏德。遊覽過後當晚再坐上火車，沿着貝加爾湖南岸行駛，7月15日早晨到達了伊爾庫茨克，緊接着又乘坐汽車去了貝加爾湖上的奧爾洪島，顛簸一天後晚上纔終於抵達。7月16日一天在奧爾洪島上，跟隨當地導遊去了島的北部，被貝加爾湖的景色深深震撼，之後又顛簸一天回到了伊爾庫茨克。7月18日我在伊爾庫茨克徒步遊覽了一整天，晚上就坐火車去了新西伯利亞。火車開了三十多個小時，終於在7月20日上午抵達了新西伯利亞，遊覽一天以後，當晚再次坐上火車前往葉卡捷琳堡。7月21日下午抵達葉卡捷琳堡，停留了一天，7月22日中午繼續前往金環小鎮弗拉基米爾。7月23日在弗拉基米爾遊覽之後，晚上前往了蘇茲達爾，在蘇茲達爾遊覽了一天，以後7月24日坐火車抵達了莫斯科庫爾斯克火車站，至此已經到達了西伯利亞鐵路的終點站。在莫斯科停留了兩天以後，我在7月27日抵達了聖彼得堡。三天後我繼續乘火車去了彼得羅扎沃茨克，當天往返了奧涅加湖上的基日島。7月31日早晨我抵達了白海小鎮凱姆，然後坐輪渡去了索洛韋茨基羣島，在島上停留了兩天後，返回凱姆繼續坐火車北上。8月3日早晨我終於抵達了我的最後一站——北極圈內的摩爾曼斯克，完成了橫貫西伯利亞，直抵北冰洋的壯舉。最後我乘坐飛機飛回莫斯科，又在迪拜轉機順便遊覽了一天，然後回到了北京。 
+
+許多人以爲西伯利亞是蠻荒之地，十分落後，俄羅斯人也很不友好，而且完全不懂英語。去之前我也多少有這樣的顧慮，但是去過以後纔發現，俄羅斯和俄羅斯人比我想象地要好很多。西伯利亞的自然環境十分好，一路上森林、草原、湖泊、河流風景迷人，完全不是一篇蠻荒的景象。俄羅斯人雖然相比西歐人要冷淡，但個人素質是非常高的，就火車車廂的衛生條件來說，超過許多發達國家。俄羅斯人在公共場所中非常小聲，從來不見任何人大聲說話，比西歐、美國還要安靜。俄羅斯人並非傳說中的完全不懂英語，即使在西伯利亞的小站站臺上買東西時，我遇到過能用流利的英語交談的店主。俄羅斯的治安環境也非常好，即使是單身女性在午夜行動也不會有太大問題，比起美國天黑後就不敢出門簡直是天壤之別，當然這多虧了隨處可見的警察。俄羅斯人雖然酗酒，但是所有商店在晚上九點以後就不再出售任何酒，以至於我在街頭連一個醉鬼都沒有遇到過。俄羅斯人也不像傳說中的懶惰，許多商店餐廳和公共設施都營業到半夜十二點，雖然還是比不上東亞人玩命幹活，比起西歐不知道高到哪裏去了。 
+
+我從2013年開始，兩年之內去了十幾個國家，有人感覺我好像是整天在環遊世界，問我哪兒來的這麼多時間和錢。實際上我這一年多來上學、實習、找工作、參加開源一件事情也沒少幹，僅僅是假期出去而已。這趟長達一個月的穿越俄羅斯的行程，我一共花了18000元人民幣左右，涵蓋了火車、機票、簽證、住宿、餐飲、購物等旅途中的一切花費。對於很多人來說，這點錢並不算多，並非難以負擔。我想說的是，環遊世界並沒有你想象的那麼難，只要願意並且有膽量，就可以實現。 
+
+鑑於 [ 窮遊網 ](http://place.qyer.com/novosibirsk/) 上已經有很多攻略了，具體每天的詳情我就不一一列舉了，放幾張照片好了。 
+
+##  西伯利亞的藍眼睛——貝加爾湖畔 
+
+[ ![](https://www.byvoid.com/upload/blog/siberia/thumb/01_Baikal.jpg) ](https://www.byvoid.com/upload/blog/siberia/01_Baikal.jpg)
+
+[ ![](https://www.byvoid.com/upload/blog/siberia/thumb/02_Baikal.jpg) ](https://www.byvoid.com/upload/blog/siberia/02_Baikal.jpg)
+
+##  克拉斯諾亞爾斯克火車站 
+
+[ ![](https://www.byvoid.com/upload/blog/siberia/thumb/03_Krasnoyarsk.jpg) ](https://www.byvoid.com/upload/blog/siberia/03_Krasnoyarsk.jpg)
+
+##  葉卡捷琳堡原始落葉松林中的神聖殉道者修道院 
+
+[ ![](https://www.byvoid.com/upload/blog/siberia/thumb/04_Yekaterinburg.jpg) ](https://www.byvoid.com/upload/blog/siberia/04_Yekaterinburg.jpg)
+
+##  莫斯科紅場上聖巴西爾大教堂 
+
+[ ![](https://www.byvoid.com/upload/blog/siberia/thumb/05_Moscow.jpg) ](https://www.byvoid.com/upload/blog/siberia/05_Moscow.jpg)
+
+##  聖彼得堡近郊彼得宮城的沙皇噴泉 
+
+[ ![](https://www.byvoid.com/upload/blog/siberia/thumb/06_SaintPetersburg.jpg) ](https://www.byvoid.com/upload/blog/siberia/06_SaintPetersburg.jpg)
+
+##  基日島奧涅加湖畔 
+
+[ ![](https://www.byvoid.com/upload/blog/siberia/thumb/07_Kizhi.jpg) ](https://www.byvoid.com/upload/blog/siberia/07_Kizhi.jpg)
+
+##  索洛韋茨基羣島湛藍的湖水 
+
+[ ![](https://www.byvoid.com/upload/blog/siberia/thumb/08_Solovetsky.jpg) ](https://www.byvoid.com/upload/blog/siberia/08_Solovetsky.jpg)
+
+##  摩爾曼斯克「列寧號」核動力破冰船 
+
+[ ![](https://www.byvoid.com/upload/blog/siberia/thumb/09_Murmansk.jpg) ](https://www.byvoid.com/upload/blog/siberia/09_Murmansk.jpg)
+#### 原文：[https://www.byvoid.com/blog/trans-siberia-travel-notes](https://www.byvoid.com/blog/trans-siberia-travel-notes)

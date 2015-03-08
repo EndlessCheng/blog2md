@@ -1,50 +1,56 @@
 # -*- coding:utf-8 -*-
 import blog2md
 
-# b = blog2md.Blog(
-# "http://jianyan.me/page/",
-# first_page_url="http://jianyan.me/",
-# article_tag='section',
+b = blog2md.Blog(
+    "http://jianyan.me/page/",
+    first_page_url="http://jianyan.me/",
+    article_tag='section',
+)
+for index, article in enumerate(b.get_all_articles(), 1):
+    print index,
+    blog2md.article_to_md(*article, article_class='post')
+print u"所有文章已下载完毕"
+print ""
+
+b2 = blog2md.Blog(
+    "https://www.byvoid.com/blog/page/",
+    article_class='post hentry clearfix',
+    title_class='post_header_link',
+)
+for index, article in enumerate(b2.get_all_articles(), 1):
+    print index,
+    extract_pair_list = [
+        ('span', 'title'),
+    ]
+    blog2md.article_to_md(*article, article_tag='article', article_class='post hentry clearfix', extract_pair_list=extract_pair_list)
+print u"所有文章已下载完毕"
+print ""
+
+# b3 = blog2md.Blog(
+# "https://blog.cee.moe/page/",
+#     verify=False,
 # )
-# for article in b.get_all_articles():
-# blog2md.article_to_md(*article)
-# print u"所有文章已下载完毕"
-# print ""
-#
-# b2 = blog2md.Blog(
-#     "https://www.byvoid.com/blog/page/",
-#     article_class='post hentry clearfix',
-#     title_class='post_header_link',
-# )
-# for article in b2.get_all_articles():
-#     blog2md.article_to_md(*article)
-# print u"所有文章已下载完毕"
-# print ""
-#
-# # b3 = blog2md.Blog(
-# #     "https://blog.cee.moe/page/",
-# #     verify=False,
-# # )
-# # for article in b3.get_all_articles():
-# #     blog2md.article_to_md(*article)
-# # print ""
-#
-# b4 = blog2md.Blog(
-#     "http://www.wdk.pw/page/",
-#     start_page=16,
-# )
-# for article in b4.get_all_articles():
+# for article in b3.get_all_articles():
 #     blog2md.article_to_md(*article)
 # print ""
-#
-# b5 = blog2md.Blog(
-#     "http://www.cnblogs.com/chujian123/default.html?page=",
-#     article_tag='div',
-# )
-# for index, article in enumerate(b5.get_all_articles(), 1):
-#     print index,
-#     blog2md.article_to_md(*article)
-# print ""
+
+b4 = blog2md.Blog(
+    "http://www.wdk.pw/page/",
+)
+for index, article in enumerate(b4.get_all_articles(), 1):
+    print index,
+    blog2md.article_to_md(*article, article_tag='article', article_class='post')
+print ""
+
+b5 = blog2md.Blog(
+    "http://www.cnblogs.com/chujian123/default.html?page=",
+    article_tag='div',
+    article_class='post',
+)
+for index, article in enumerate(b5.get_all_articles(), 1):
+    print index,
+    blog2md.article_to_md(*article, article_class='post')
+print ""
 
 b6 = blog2md.Blog(
     "http://blog.csdn.net/wxg694175346/article/list/",
@@ -86,10 +92,7 @@ b9 = blog2md.Blog(
 )
 for index, article in enumerate(b9.get_all_articles(), 1):
     print index,
-    extract_pair_list = [
-        ('div', 'about-author clearfix'),
-    ]
-    blog2md.article_to_md(*article, article_class='section', extract_pair_list=extract_pair_list)
+    blog2md.article_to_md(*article, article_class='section')
 print ""
 
 b10 = blog2md.Blog(
@@ -113,8 +116,5 @@ b11 = blog2md.Blog(
 )
 for index, article in enumerate(b11.get_all_articles(), 1):
     print index,
-    extract_pair_list = [
-        ('td', 'gutter'),
-    ]
-    blog2md.article_to_md(*article, extract_pair_list=extract_pair_list)
+    blog2md.article_to_md(*article, article_class='post-content')
 print ""
