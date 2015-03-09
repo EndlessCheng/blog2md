@@ -1,0 +1,43 @@
+三月  ** 12 ** 2014 
+
+  *   *   *     * [ 冰雪奇緣 ](/blog/tag/冰雪奇緣)
+    * [ 左翼 ](/blog/tag/左翼)
+    * [ 迪士尼 ](/blog/tag/迪士尼)
+    * [ 電影 ](/blog/tag/電影)
+    * [ 女性主義 ](/blog/tag/女性主義)
+    * [ 平等主義 ](/blog/tag/平等主義)
+    * [ 全球化 ](/blog/tag/全球化)
+    * [ 陰謀論 ](/blog/tag/陰謀論)
+    * [ 自由主義 ](/blog/tag/自由主義)
+    * [ 稷下學宮 ](/blog/tag/稷下學宮)
+
+#  [ 冰雪奇緣中的左翼符號 ](/blog/frozen-leftist-symbols)
+
+![](https://www.byvoid.com/upload/blog/frozen/frozen.jpg)
+
+[ 冰雪奇緣 ](https://zh.wikipedia.org/wiki/%E5%86%B0%E9%9B%AA%E5%A5%87%E7%BC%98) （Frozen）最近火得要命，主題曲「Let it go」更是紅得發紫。在我看來，這是一部迎合了美國左翼價值觀的電影，有衆多符號可以證明這一點。 
+
+##  女性主義 
+
+主角Anna和Elsa都是有性格、有思想的女性，而非過去迪士尼童話中爲愛情而生的公主的經典形象。雖然「花木蘭」、「勇敢傳說」中的女主角已經打破了這一點，但要說專門弘揚女性獨立意識，還是冰雪奇緣。 
+
+##  平等主義 
+
+男主角Kristoff出身貧寒卑微，但卻可以和Anna公主平起平坐，最後還能贏得芳心。 
+
+##  反全球化 
+
+Weselton公爵作爲Arendelle最重要的貿易夥伴派來的代表，竟被描繪爲一個跳樑小丑，正好迎合西方左翼反全球化的嗜好。 
+
+##  陰謀論 
+
+Hans王子接近Anna公主目的只是爲了奪取王位，熟悉的陰謀論調。 
+
+##  反傳統 
+
+主題曲「Let it go」整首歌都在表達這一觀點，譬如「I’m never going back, the past is in the past」、「That perfect girl is gone」。 
+
+##  自由主義 
+
+主題曲「Let it go」中唱到「It’s time to see what I can do, to test the limits and break through. No right, no wrong, no rules for me, I’m free!」前一句體現出的是積極自由主義（Liberty to），後一句是消極自由主義（Liberty from）。兩句話一舉贏得了左翼和右翼，迪士尼真是高明。 
+#### 原文：[https://www.byvoid.com/blog/frozen-leftist-symbols](https://www.byvoid.com/blog/frozen-leftist-symbols)

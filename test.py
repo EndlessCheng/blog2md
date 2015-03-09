@@ -9,7 +9,6 @@ b = blog2md.Blog(
 for index, article in enumerate(b.get_all_articles(), 1):
     print index,
     blog2md.article_to_md(*article, article_class='post')
-print u"所有文章已下载完毕"
 print ""
 
 b2 = blog2md.Blog(
@@ -23,7 +22,6 @@ for index, article in enumerate(b2.get_all_articles(), 1):
         ('span', 'title'),
     ]
     blog2md.article_to_md(*article, article_tag='article', article_class='post hentry clearfix', extract_pair_list=extract_pair_list)
-print u"所有文章已下载完毕"
 print ""
 
 # b3 = blog2md.Blog(

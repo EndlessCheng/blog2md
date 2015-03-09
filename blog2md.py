@@ -59,7 +59,7 @@ def get_article_text(article_soup, article_tag='div', article_class=None, extrac
         article_content = article_soup.find(article_tag)
     else:
         article_content = article_soup.find(article_tag, class_=article_class) or article_soup.find(article_tag,
-                                                                                                id=article_class)
+                                                                                                    id=article_class)
     if article_content is None:
         raise u"未找到正文，请确认填写是否正确（如 '-', '_'）"
     extract_pair_list = extract_pair_list or []
@@ -79,7 +79,7 @@ def get_article_text(article_soup, article_tag='div', article_class=None, extrac
     return article_soup
 
 
-def article_to_md(article_soup, url, article_tag='div', article_class=None, extract_pair_list=None):
+def article_to_md(article_soup, url, **kwargs):
     dir_path = os.path.join(os.getcwd(), "markdown")  # or name it by self.url
     if not os.path.isdir(dir_path):
         os.makedirs(dir_path)
@@ -89,9 +89,7 @@ def article_to_md(article_soup, url, article_tag='div', article_class=None, extr
         article_title = article_title.encode('gbk')
     # print article_title.decode('gbk')
     file_path = os.path.join(dir_path, article_title)
-    extract_pair_list = extract_pair_list or []
-    md_text = html2text(get_article_text(article_soup, article_tag=article_tag, article_class=article_class,
-                                         extract_pair_list=extract_pair_list).decode('utf-8'))
+    md_text = html2text(get_article_text(article_soup, **kwargs).decode('utf-8'))
     f = open(file_path, 'w')
     f.write(md_text)
 
@@ -103,10 +101,9 @@ def article_to_md(article_soup, url, article_tag='div', article_class=None, extr
     print u"" + file_path.decode('gbk')
 
 
-# def article_url_to_md(url, article_tag='div', article_class='post-content', verify=True, extract_pair_list=None):
-# soup = BeautifulSoup(session.get(url, headers=HEADERS, verify=verify).content)
-# extract_pair_list = extract_pair_list or []
-# article_to_md(soup, url, article_tag=article_tag, article_class=article_class, extract_pair_list=extract_pair_list)
+def article_url_to_md(url, verify=True, **kwargs):
+    soup = BeautifulSoup(session.get(url, headers=HEADERS, verify=verify).content)
+    article_to_md(soup, url, **kwargs)
 
 
 class Blog:
