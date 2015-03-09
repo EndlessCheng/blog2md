@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-__author__ = 'Endless'
+__author__ = 'EndlessCheng'
 __version__ = '2.0.5'
 
 import urlparse
