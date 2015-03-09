@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 __author__ = 'EndlessCheng'
-__version__ = '2.0.5'
+__version__ = '2.0.6'
 
 import urlparse
 from bs4 import BeautifulSoup
@@ -92,10 +92,8 @@ def article_to_md(article_soup, url, **kwargs):
     md_text = html2text(get_article_text(article_soup, **kwargs).decode('utf-8'))
     f = open(file_path, 'w')
     f.write(md_text)
-
     if platform.system() == 'Windows':
         f.write("#### 原文：[%s](%s)" % (url, url))
-
     f.close()
 
     print u"" + file_path.decode('gbk')
@@ -109,7 +107,6 @@ def article_url_to_md(url, verify=True, **kwargs):
 class Blog:
     def __init__(self, url, first_page_url=None, start_page=1, url_with_page=True, article_tag='article',
                  article_class=None, title_tag='a', title_class=None, verify=True):
-
         url_parse = urlparse.urlparse(url)
         self.netloc = url_parse.netloc
         self.site_name = url_parse.scheme + '://' + url_parse.netloc
@@ -123,14 +120,17 @@ class Blog:
         self.title_class = title_class
         self.verify = verify
 
+    def get_soup(self, url):
+        s = session.get(url, headers=HEADERS, verify=self.verify)  # Verify the SSL certificate?
+        s.raise_for_status()
+        return BeautifulSoup(s.content)
+
     def get_all_article_head_soup(self, url):
         if not self.is_valid_url(url):
             return
         print u""
         print u"正在打开 %s" % url
-        s = session.get(url, headers=HEADERS, verify=self.verify)
-        s.raise_for_status()
-        soup = BeautifulSoup(s.content)  # Verify the SSL certificate?
+        soup = self.get_soup(url)
         # print soup
         if self.article_class is None:
             article_head_soup_list = soup.find_all(self.article_tag)
@@ -171,9 +171,7 @@ class Blog:
                         print u""
                         print u"解析 %s" % article_url
 
-                        s = session.get(article_url, headers=HEADERS, verify=self.verify)
-                        s.raise_for_status()
-                        article_soup = BeautifulSoup(s.content)
+                        article_soup = self.get_soup(article_url)
                         yield (article_soup, article_url)
                     start_page += 1
             else:
@@ -189,9 +187,7 @@ class Blog:
                     print u""
                     print u"解析 %s" % article_url
 
-                    s = session.get(article_url, headers=HEADERS, verify=self.verify)
-                    s.raise_for_status()
-                    article_soup = BeautifulSoup(s.content)
+                    article_soup = self.get_soup(article_url)
                     yield (article_soup, article_url)
         except requests.HTTPError:
             print u"所有文章已下载完毕"
