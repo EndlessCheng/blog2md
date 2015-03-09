@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 __author__ = 'Endless'
-__version__ = '2.0.0'
+__version__ = '2.0.5'
 
 import urlparse
 from bs4 import BeautifulSoup
