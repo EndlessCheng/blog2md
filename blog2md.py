@@ -30,7 +30,7 @@ COMMON_EXTRACT_PAIR_LIST = [
     ('td', 'gutter'),
 
     ('img', 'code_img_closed'),
-    ('img', 'code_img_opened'),
+    ('img', 'code_img_opened'),  # cnblogs
     ('span', 'cnblogs_code_collapse'),
 
     ('div', 'about-author clearfix'),
