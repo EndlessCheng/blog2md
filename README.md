@@ -9,7 +9,7 @@ There is a BUG in `html2text/config.py`:
 
 ```python
 # Wrap long lines at position. 0 for no wrapping. (Requires Python 2.3.)
-BODY_WIDTH = 50
+BODY_WIDTH = 78
 ```
 
-Change 50 to 0 to disable wrapping before you run.
+Change 78 to 0 to disable wrapping before you run.
