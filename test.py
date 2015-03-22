@@ -4,32 +4,42 @@ import blog2md
 b = blog2md.Blog(
     "http://jianyan.me/page/",
     first_page_url="http://jianyan.me/",
-    article_tag='section',
+    entry_tag='section',
+    entry_class='post',
+    description_tag='p',
 )
 for index, article in enumerate(b.get_all_articles(), 1):
     print index,
-    blog2md.article_to_md(*article, article_class='post')
+    article.to_hexo(
+        content_class='article-content',
+        tag_class='article-tags',
+    )
 print ""
 
 b2 = blog2md.Blog(
     "https://www.byvoid.com/blog/page/",
-    article_class='post hentry clearfix',
-    title_class='post_header_link',
+    entry_tag='section',
+    entry_class='entry-body entry-body-content',
 )
 for index, article in enumerate(b2.get_all_articles(), 1):
     print index,
-    extract_pair_list = [
-        ('span', 'title'),
-    ]
-    blog2md.article_to_md(*article, article_tag='article', article_class='post hentry clearfix', extract_pair_list=extract_pair_list)
+    article.to_hexo(
+        content_tag='section',
+        content_class='entry-body entry-body-content',
+        tag_class='entry-meta',
+    )
 print ""
 
+# FIXME: test verify
 # b3 = blog2md.Blog(
-# "https://blog.cee.moe/page/",
+#     "https://blog.cee.moe/page/",
 #     verify=False,
 # )
-# for article in b3.get_all_articles():
-#     blog2md.article_to_md(*article)
+# for index, article in b3.get_all_articles():
+#     print index,
+#     article.to_hexo(
+#
+#     )
 # print ""
 
 b4 = blog2md.Blog(
@@ -37,82 +47,105 @@ b4 = blog2md.Blog(
 )
 for index, article in enumerate(b4.get_all_articles(), 1):
     print index,
-    blog2md.article_to_md(*article, article_tag='article', article_class='post')
+    article.to_hexo(
+        content_class='post-content',
+    )
 print ""
 
 b5 = blog2md.Blog(
     "http://www.cnblogs.com/chujian123/default.html?page=",
-    article_tag='div',
-    article_class='post',
+    entry_tag='div',
+    entry_class='post',
 )
 for index, article in enumerate(b5.get_all_articles(), 1):
     print index,
-    blog2md.article_to_md(*article, article_class='post')
+    article.to_hexo(
+        content_class='cnblogs_post_body',
+        time_class='post-date',
+        tag_class='EntryTag',
+    )
 print ""
 
 b6 = blog2md.Blog(
-    "http://blog.csdn.net/wxg694175346/article/list/",
-    article_tag='span',
-    article_class='link_title',
+    "http://blog.csdn.net/synapse7/article/list/",
+    entry_tag='span',
+    entry_class='link_title',
 )
 for index, article in enumerate(b6.get_all_articles(), 1):
     print index,
-    blog2md.article_to_md(*article, article_class='article_details')
+    article.to_hexo(
+        content_class='article_content',
+        title_class='link_title',
+        # title_extract_tag='font',
+        time_class='link_postdate',
+        tag_class='tag2box',
+    )
 print ""
 
 b7 = blog2md.Blog(
     "http://www.xysay.com/page/",
-    article_tag='h2',
-    article_class='h1',
+    entry_tag='h2',
+    entry_class='h1',
 )
 for index, article in enumerate(b7.get_all_articles(), 1):
     print index,
-    extract_pair_list = [
-        ('div', 'mbx'),
-        ('div', 'datetime'),
-    ]
-    blog2md.article_to_md(*article, article_class='content', extract_pair_list=extract_pair_list)
+    article.to_hexo(
+        content_tag='article',
+        content_class='entry-content',
+        time_class='datetime',
+        tag_class='cb_bq'
+    )
 print ""
 
-b8 = blog2md.Blog(
-    "http://www.findspace.name/page/",
-)
-for index, article in enumerate(b8.get_all_articles(), 1):
-    print index,
-    blog2md.article_to_md(*article, article_class='single_post')
-print ""
+# FIXME: 乱码？？？
+# b8 = blog2md.Blog(
+#     "http://www.findspace.name/page/",
+#     entry_tag='h2',
+#     entry_class='title',
+# )
+# for index, article in enumerate(b8.get_all_articles(), 1):
+#     print index,
+#     article.to_hexo(
+#         content_class='post-single-content box mark-links',
+#     )
+# print ""
 
 b9 = blog2md.Blog(
     "http://mindhacks.cn/page/",
-    article_tag='div',
-    article_class='entry-thumbnails',
-    start_page=1
+    entry_tag='div',
+    entry_class='entry-thumbnails',
 )
 for index, article in enumerate(b9.get_all_articles(), 1):
     print index,
-    blog2md.article_to_md(*article, article_class='section')
+    article.to_hexo(
+        content_class='entry-content clearfix',
+        time_class='published',
+        time_attr='title',
+    )
 print ""
 
-b10 = blog2md.Blog(
-    "http://yuguo.us/",
-    article_tag='p',
-    url_with_page=False
-)
-for index, article in enumerate(b10.get_all_articles(), 1):
-    print index,
-    extract_pair_list = [
-        ('p', 'previous-next-nav'),
-    ]
-    blog2md.article_to_md(*article, article_class='single-post', extract_pair_list=extract_pair_list)
-print ""
+# FIXME: single page
+# b10 = blog2md.Blog(
+#     "http://yuguo.us/",
+#     entry_tag='p',
+#     is_single_page=False,
+# )
+# for index, article in enumerate(b10.get_all_articles(), 1):
+#     print index,
+#     article.to_md(
+#         content_class='single-post',
+#     )
+# print ""
 
 b11 = blog2md.Blog(
     "https://blog.phoenixlzx.com/page/",
     first_page_url='https://blog.phoenixlzx.com/',
-    article_tag='h1',
-    article_class='title',
+    entry_tag='h1',
+    entry_class='title',
 )
 for index, article in enumerate(b11.get_all_articles(), 1):
     print index,
-    blog2md.article_to_md(*article, article_class='post-content')
+    article.to_hexo(
+        content_class='entry',
+    )
 print ""

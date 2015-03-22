@@ -1,0 +1,507 @@
+<!DOCTYPE HTML>
+<html>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?efd32d79f8a09abef26865f3b17a3fc7";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>re.compile() 函数的一个小改进 | 简言</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+
+    <meta name="author" content="简言">
+
+    <meta name="description" itemprop="description"
+          content="Python 中的 re.compile() 函数可以「格式化」复杂的正则表达式，从而方便理解。但是像 literal 48 这句话，还需要我们自己转换一下 ASCII 对应的字符。不妨自己 DIY 一下源码。">
+
+
+    <link rel="alternative" href="/atom.xml" title="简言" type="application/atom+xml">
+
+
+    <link rel="icon" href="/img/favicon.ico">
+
+
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+<body>
+<header>
+    <div>
+
+        <div id="imglogo">
+            <a href="/"><img src="/img/logo.png" alt="简言" title="简言"/></a>
+        </div>
+
+        <div id="textlogo">
+            <h1 class="site-name"><a href="/" title="简言">简言</a></h1>
+
+            <h2 class="blog-motto">言简意赅，技术远没那么复杂</h2>
+        </div>
+        <div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+        </a></div>
+        <nav class="animated">
+            <ul>
+                <ul>
+
+                    <li><a href="/">Home</a></li>
+
+                    <li><a href="/archives">Archives</a></li>
+
+                    <li><a href="/about">About</a></li>
+
+                    <li>
+
+                        <form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+                            <label>Search</label>
+                            <input type="search" id="search" name="q" autocomplete="off" maxlength="20"
+                                   placeholder="Search"/>
+                            <input type="hidden" name="q" value="site:jianyan.me">
+                        </form>
+
+                    </li>
+                </ul>
+        </nav>
+    </div>
+</header>
+<div id="container">
+    <div id="main" class="post" itemscope itemprop="blogPost">
+
+        <article itemprop="articleBody">
+            <header class="article-info clearfix">
+                <h1 itemprop="name">
+
+                    <a href="/2015/03/19/recompile-a-small-improvement/" title="re.compile() 函数的一个小改进" itemprop="url">re.compile()
+                        函数的一个小改进</a>
+                </h1>
+
+                <p class="article-author">By
+
+                    <a href="https://plus.google.com/103441795113657293146?rel=author" title="简言" target="_blank"
+                       itemprop="author">简言</a>
+
+                <p class="article-time">
+                    <time datetime="2015-03-19T13:35:00.000Z" itemprop="datePublished"> Published Mar 19 2015</time>
+
+                </p>
+            </header>
+            <div class="article-content">
+
+                <div id="toc" class="toc-article">
+                    <strong class="toc-title">Contents</strong>
+
+
+                </div>
+
+                <p>Python 中的 <code>re.compile()</code> 函数可以「格式化」复杂的正则表达式，从而方便理解。</p>
+
+                <p>比如执行 <code>re.compile(r&quot;0\d{2}-\d{8}|0\d{3}-\d{7}&quot;, re.DEBUG)</code> 后得到：</p>
+                <figure class="highlight">
+                    <table>
+                        <tr>
+                            <td class="gutter">
+                                <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div
+                                        class="line">4
+                                </div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div
+                                        class="line">8
+                                </div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div
+                                        class="line">12
+                                </div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div
+                                        class="line">16
+                                </div><div class="line">17</div></pre>
+                            </td>
+                            <td class="code">
+                                <pre><div class="line"><span class="keyword">literal</span> <span
+                                        class="number">48</span></div><div class="line">branch</div><div class="line">
+                                    max_repeat <span class="number">2</span> <span class="number">2</span></div><div
+                                        class="line"><span class="keyword">in</span></div><div class="line"> category
+                                    category_digit
+                                </div><div class="line"><span class="keyword">literal</span> <span
+                                        class="number">45</span></div><div class="line"> max_repeat <span
+                                        class="number">8</span> <span class="number">8</span></div><div class="line">
+                                    <span class="keyword">in</span></div><div class="line"> category category_digit
+                                </div><div class="line"><span class="keyword">or</span></div><div class="line">
+                                    max_repeat <span class="number">3</span> <span class="number">3</span></div><div
+                                        class="line"><span class="keyword">in</span></div><div class="line"> category
+                                    category_digit
+                                </div><div class="line"><span class="keyword">literal</span> <span
+                                        class="number">45</span></div><div class="line"> max_repeat <span
+                                        class="number">7</span> <span class="number">7</span></div><div class="line">
+                                    <span class="keyword">in</span></div><div class="line"> category category_digit
+                                </div></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </figure>
+
+                <p>但是像 <code>literal 48</code> 这句话，还需要我们自己转换一下 ASCII 对应的字符。不妨自己 DIY 一下源码。</p>
+
+                <p>将 <code>Lib/sre_parse.py</code> 的 <code>SubPattern</code> 类中的 <code>dump()</code> 函数末尾的 <code>print
+                    av, ; nl = 0</code> 修改成</p>
+                <figure class="highlight python">
+                    <table>
+                        <tr>
+                            <td class="gutter">
+                                <pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div
+                                        class="line">4
+                                </div></pre>
+                            </td>
+                            <td class="code">
+                                <pre><div class="line"><span class="keyword">print</span> av,</div><div class="line">
+                                    <span class="keyword">if</span> op == <span class="string">"literal"</span> <span
+                                        class="keyword">or</span> op == <span class="string">"not_literal"</span>:
+                                </div><div class="line"><span class="keyword">print</span> <span
+                                        class="string">"(%s)"</span> % repr(chr(av)),
+                                </div><div class="line">nl = <span class="number">0</span></div></pre>
+                            </td>
+                        </tr>
+                    </table>
+                </figure>
+
+                <p>就可以显示 ASCII 码对应的字符。（10 会以 <code>\n</code> 打印出来）</p>
+
+            </div>
+            <footer class="article-footer clearfix">
+                <div class="article-catetags">
+
+
+                    <div class="article-tags">
+
+                        <span></span> <a href="/tags/Python/">Python</a><a href="/tags/正则表达式/">正则表达式</a>
+                    </div>
+
+                </div>
+
+
+                <div class="article-share" id="share">
+
+                    <div data-url="http://jianyan.me/2015/03/19/recompile-a-small-improvement/"
+                         data-title="re.compile() 函数的一个小改进 | 简言" data-tsina="null" class="share clearfix">
+                    </div>
+
+                </div>
+            </footer>
+        </article>
+
+        <nav class="article-nav clearfix">
+
+
+            <div class="next">
+                <a href="/2015/03/09/notes-on-blog2md-development/" title="blog2md 开发小记">
+                    <strong>下一篇：</strong><br/>
+                     <span>blog2md 开发小记
+                    </span>
+                </a>
+            </div>
+
+        </nav>
+
+
+        <section id="comments" class="comment">
+            <div id="disqus_thread">
+                <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by
+                    Disqus.</a></noscript>
+            </div>
+        </section>
+
+    </div>
+    <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+    <div id="toc" class="toc-aside">
+        <strong class="toc-title">Contents</strong>
+
+
+    </div>
+
+    <div id="asidepart">
+        <div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+        <aside class="clearfix">
+
+
+            <div class="tagcloudlist">
+                <p class="asidetitle">Tag Cloud</p>
+
+                <div class="tagcloudlist clearfix">
+                    <a href="/tags/Android/" style="font-size: 10.00px;">Android</a><a href="/tags/Beautiful-Soup/"
+                                                                                       style="font-size: 10.00px;">Beautiful
+                    Soup</a><a href="/tags/C/" style="font-size: 13.33px;">C</a><a href="/tags/Django/"
+                                                                                   style="font-size: 16.67px;">Django</a><a
+                        href="/tags/GHC/" style="font-size: 10.00px;">GHC</a><a href="/tags/Git/"
+                                                                                style="font-size: 13.33px;">Git</a><a
+                        href="/tags/GitHub/" style="font-size: 16.67px;">GitHub</a><a href="/tags/Hexo/"
+                                                                                      style="font-size: 10.00px;">Hexo</a><a
+                        href="/tags/JNI/" style="font-size: 10.00px;">JNI</a><a href="/tags/Jacman/"
+                                                                                style="font-size: 10.00px;">Jacman</a><a
+                        href="/tags/Java/" style="font-size: 10.00px;">Java</a><a href="/tags/Markdown/"
+                                                                                  style="font-size: 10.00px;">Markdown</a><a
+                        href="/tags/PIL/" style="font-size: 10.00px;">PIL</a><a href="/tags/Pillow/"
+                                                                                style="font-size: 10.00px;">Pillow</a><a
+                        href="/tags/Python/" style="font-size: 20.00px;">Python</a><a href="/tags/SAE/"
+                                                                                      style="font-size: 10.00px;">SAE</a><a
+                        href="/tags/html2text/" style="font-size: 10.00px;">html2text</a><a href="/tags/macro/"
+                                                                                            style="font-size: 10.00px;">macro</a><a
+                        href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/「Hello-World」/"
+                                                                                          style="font-size: 10.00px;">「Hello
+                    World」</a><a href="/tags/杂谈/" style="font-size: 10.00px;">杂谈</a><a href="/tags/正则表达式/"
+                                                                                       style="font-size: 10.00px;">正则表达式</a><a
+                        href="/tags/混合编程/" style="font-size: 10.00px;">混合编程</a><a href="/tags/爬虫/"
+                                                                                  style="font-size: 13.33px;">爬虫</a><a
+                        href="/tags/网络传输协议/" style="font-size: 10.00px;">网络传输协议</a>
+                </div>
+            </div>
+
+
+            <div class="linkslist">
+                <p class="asidetitle">Links</p>
+                <ul>
+
+                    <li>
+                        <a href="http://endless.logdown.com/" target="_blank" title="Logdown 博客">Logdown 博客</a>
+                    </li>
+
+                    <li>
+                        <a href="http://blog.csdn.net/synapse7?viewmode=list" target="_blank" title="CSDN 博客">CSDN
+                            博客</a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/EndlessCheng" target="_blank" title="GitHub">GitHub</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="rsspart">
+                <a href="/atom.xml" target="_blank" title="rss">RSS</a>
+            </div>
+
+        </aside>
+    </div>
+</div>
+<footer>
+    <div id="footer">
+
+        <div class="line">
+            <span></span>
+
+            <div class="author"></div>
+        </div>
+
+
+        <div class="social-font" class="clearfix">
+
+
+            <a href="https://github.com/EndlessCheng" target="_blank" class="icon-github" title="github"></a>
+
+
+            <a href="http://stackoverflow.com/users/3208881" target="_blank" class="icon-stack-overflow"
+               title="stackoverflow"></a>
+
+
+            <a href="https://www.douban.com/people/52879216" target="_blank" class="icon-douban" title="豆瓣"></a>
+
+
+            <a href="https://www.zhihu.com/people/endlesscheng" target="_blank" class="icon-zhihu" title="知乎"></a>
+
+
+            <a href="https://plus.google.com/103441795113657293146?rel=author" target="_blank" class="icon-google_plus"
+               title="Google+"></a>
+
+
+            <a href="mailto:loli.con@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+
+        </div>
+        <p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme
+            by <a href="https://github.com/wuchong/jacman" target="_blank" title="Pacman">Jacman</a> © 2015
+
+            <a href="http://jianyan.me/about" target="_blank" title="简言">简言</a>
+
+        </p>
+    </div>
+</footer>
+<script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.navbar').click(function () {
+            $('header nav').toggleClass('shownav');
+        });
+        var myWidth = 0;
+
+        function getSize() {
+            if (typeof( window.innerWidth ) == 'number') {
+                myWidth = window.innerWidth;
+            } else if (document.documentElement && document.documentElement.clientWidth) {
+                myWidth = document.documentElement.clientWidth;
+            }
+            ;
+        };
+        var m = $('#main'),
+                a = $('#asidepart'),
+                c = $('.closeaside'),
+                o = $('.openaside');
+        $(window).resize(function () {
+            getSize();
+            if (myWidth >= 1024) {
+                $('header nav').removeClass('shownav');
+            } else {
+                m.removeClass('moveMain');
+                a.css('display', 'block').removeClass('fadeOut');
+                o.css('display', 'none');
+
+                $('#toc.toc-aside').css('display', 'none');
+
+            }
+        });
+        c.click(function () {
+            a.addClass('fadeOut').css('display', 'none');
+            o.css('display', 'block').addClass('fadeIn');
+            m.addClass('moveMain');
+        });
+        o.click(function () {
+            o.css('display', 'none').removeClass('beforeFadeIn');
+            a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');
+            m.removeClass('moveMain');
+        });
+        $(window).scroll(function () {
+            o.css("top", Math.max(80, 260 - $(this).scrollTop()));
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var ai = $('.article-content>iframe'),
+                ae = $('.article-content>embed'),
+                t = $('#toc'),
+                h = $('article h2')
+        ah = $('article h2'),
+                ta = $('#toc.toc-aside'),
+                o = $('.openaside'),
+                c = $('.closeaside');
+        if (ai.length > 0) {
+            ai.wrap('<div class="video-container" />');
+        }
+        ;
+        if (ae.length > 0) {
+            ae.wrap('<div class="video-container" />');
+        }
+        ;
+        if (ah.length == 0) {
+            t.css('display', 'none');
+        } else {
+            c.click(function () {
+                ta.css('display', 'block').addClass('fadeIn');
+            });
+            o.click(function () {
+                ta.css('display', 'none');
+            });
+            $(window).scroll(function () {
+                ta.css("top", Math.max(140, 320 - $(this).scrollTop()));
+            });
+        }
+        ;
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var $this = $('.share'),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                title = $this.attr('data-title'),
+                tsina = $this.attr('data-tsina'),
+                description = $this.attr('description');
+        var html = [
+            '<a href="#" class="overlay" id="qrcode"></a>',
+            '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+            '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+            '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title + '" class="article-share-renren" target="_blank" title="人人"></a>',
+            '<a href="http://service.weibo.com/share/share.php?title=' + title + '&url=' + encodedUrl + '&ralateUid=' + tsina + '&searchPic=true&style=number' + '" class="article-share-weibo" target="_blank" title="微博"></a>',
+            '<span title="Share to"></span>'
+        ].join('');
+        $this.append(html);
+        $('.article-share-qrcode').click(function () {
+            var imgSrc = $('#qrcode-pic').attr('data-src');
+            $('#qrcode-pic').attr('src', imgSrc);
+            $('#qrcode-pic').load(function () {
+                $('.qrcode strong').text(' ');
+            });
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+
+    var disqus_shortname = 'jianyan';
+
+    (function () {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.article-content').each(function (i) {
+            $(this).find('img').each(function () {
+                if ($(this).parent().hasClass('fancybox')) return;
+                var alt = this.alt;
+                if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+                $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+            });
+            $(this).find('.fancybox').each(function () {
+                $(this).attr('rel', 'article' + i);
+            });
+        });
+        if ($.fancybox) {
+            $('.fancybox').fancybox();
+        }
+    });
+</script>
+
+
+<!-- Analytics Begin -->
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+<div id="totop">
+    <a title="Back to Top"><img src="/img/scrollup.png"/></a>
+</div>
+<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+</body>
+</html>
