@@ -7,9 +7,9 @@ tags: [Pillow, PIL, Python, ]
 description: 1. 图片来自 [知乎](http://zhuanlan.zhihu.com/zhihu-product) 2. 颜色参考了 [Adobe Color CC](https://color.adobe.com/zh/explore/most-popular/?time=all) 3. [RGBA color space](http://en.wikipedia.org/wiki/RGBA_color_space) 4. [Python 练习册，每天一个小程序](https://github.com/Show-Me-the-Code/show-me-the-code)
 
 ---
-首先 ` pip install Pillow ` 安装 Pillow 模块。（这名字挺萌的） 
+首先 `pip install Pillow` 安装 Pillow 模块。（这名字挺萌的）
 
-直接上代码： 
+直接上代码：
     
     
     # -*- coding: utf-8 -*-
@@ -54,14 +54,14 @@ description: 1. 图片来自 [知乎](http://zhuanlan.zhihu.com/zhihu-product) 2
   
 ---  
   
-效果图： 
+效果图：
 
 ![](http://endless.qiniudn.com/blogpillow.bmp)
 
-参考资料： 
+参考资料：
 
-  1. 图片来自 [ 知乎 ](http://zhuanlan.zhihu.com/zhihu-product)
-  2. [ RGBA color space ](http://en.wikipedia.org/wiki/RGBA_color_space)
-  3. [ Python 练习册，每天一个小程序 ](https://github.com/Show-Me-the-Code/show-me-the-code)
+  1. 图片来自 [知乎](http://zhuanlan.zhihu.com/zhihu-product)
+  2. [RGBA color space](http://en.wikipedia.org/wiki/RGBA_color_space)
+  3. [Python 练习册，每天一个小程序](https://github.com/Show-Me-the-Code/show-me-the-code)
 
-附上最近发现的一个好网站： [ Adobe Color CC ](https://color.adobe.com/zh/explore/most-popular/?time=all)
+附上最近发现的一个好网站：[Adobe Color CC](https://color.adobe.com/zh/explore/most-popular/?time=all)

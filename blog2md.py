@@ -57,7 +57,7 @@ _session = requests.session()
 
 
 def _get_soup(url, verify=True):
-    s = _session.get(url, headers=_HEADERS, verify=verify)  # Verify the SSL certificate?
+    s = _session.get(url, headers=_HEADERS, verify=verify)  # Verify the SSL certificate
     s.raise_for_status()  # FIXME: add try-except block here.
     return BeautifulSoup(s.content)
 
@@ -73,6 +73,9 @@ class Blog:
     def __init__(self, url, first_page_url=None, start_page=1, is_single_page=False, verify=True,
                  entry_tag='article', entry_class=None, entry_title_tag='a', entry_title_class=None,
                  description_tag=None, description_class=None):
+        """
+        :param first_page_url: set this when he first page return 404 and the home page isn't the netloc
+        """
         url_parse = urlparse.urlparse(url)
         self.netloc = url_parse.netloc
         self.site_name = url_parse.scheme + '://' + url_parse.netloc
@@ -100,7 +103,6 @@ class Blog:
         print u""
         print u"正在打开 %s" % url
         soup = _get_soup(url, self.verify)
-        # print soup.decode('gbk')
         return soup.find_all(self.entry_tag) if self.entry_class is None else soup.find_all(self.entry_tag,
                                                                                             class_=self.entry_class)
 
@@ -117,8 +119,7 @@ class Blog:
             article_name = "".join(list(entry_title_soup.stripped_strings))
             if article_name == "":  # get next tag
                 article_name = "".join(list(entry_soup.next_sibling.stripped_strings))
-        # print article_name.decode('utf-8')
-        return article_url, _get_valid_file_name(article_name.encode('utf-8'))  # ????
+        return article_url, _get_valid_file_name(article_name)
 
     def _get_article_description(self, entry_soup):
         if self.description_tag is None and self.description_class is None:
@@ -162,7 +163,6 @@ class Article:
         self.url = url
         self.soup = _get_soup(url, verify)
         self.title = title
-        # print title
         self.description = description
 
     def _get_file_name(self, title_class, title_extract_tag):
@@ -180,7 +180,7 @@ class Article:
                 if title_extract_soup is not None:
                     title_extract_soup.extract()
             file_name = title_soup.stripped_strings.next()  # clear blank chars
-        file_name = _get_valid_file_name(file_name.encode('utf-8'))
+        file_name = _get_valid_file_name(file_name)
         return file_name
 
     def _get_date(self, time_class, time_attr):
@@ -212,12 +212,11 @@ class Article:
         return head
 
     def _get_content_soup(self, content_tag, content_class, extract_pair_list):
-        # for class_ in CONTENT_CLASS_LIST:  # FIXME
         article_content_soup = self.soup.find(content_tag, class_=content_class) or self.soup.find(content_tag,
                                                                                                    id=content_class)
         if article_content_soup is None:
             raise u"未找到正文，请确认填写是否正确（如 '-', '_'）"
-        article_content_soup = BeautifulSoup(article_content_soup.decode())  # ?????
+        article_content_soup = BeautifulSoup(article_content_soup.encode())
 
         extract_pair_list = extract_pair_list or []
         extract_pair_list.extend(_COMMON_EXTRACT_PAIR_LIST)
@@ -229,11 +228,15 @@ class Article:
             for extract in extract_list:
                 extract.extract()
 
-        final_soup = BeautifulSoup(self.soup.decode())  # ?????
+        final_soup = BeautifulSoup(self.soup.encode())
         final_soup.body.replace_with(article_content_soup)
         return final_soup
 
     def _to_md(self, content_soup, title_class, title_extract_tag, time_class=None, time_attr=None, tag_class=None):
+        """
+        Must use 'gbk' on file path on Windows
+
+        """
         dir_path = os.path.join(os.getcwd(), self.netloc)
         if not os.path.isdir(dir_path):
             os.makedirs(dir_path)
@@ -245,7 +248,7 @@ class Article:
             f.write("#  %s\n---\n\n" % file_name)
         else:
             f.write(self._get_hexo_head(file_name, time_class, time_attr, tag_class))
-        md_text = html2text(content_soup.decode('utf-8'))  # ?????
+        md_text = html2text(content_soup.encode())
         f.write(md_text)
         if tag_class is None:
             f.write("#### 原文：[%s](%s)" % (self.url, self.url))

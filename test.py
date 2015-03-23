@@ -124,18 +124,17 @@ for index, article in enumerate(b9.get_all_articles(), 1):
     )
 print ""
 
-# FIXME: single page
-# b10 = blog2md.Blog(
-#     "http://yuguo.us/",
-#     entry_tag='p',
-#     is_single_page=False,
-# )
-# for index, article in enumerate(b10.get_all_articles(), 1):
-#     print index,
-#     article.to_md(
-#         content_class='single-post',
-#     )
-# print ""
+b10 = blog2md.Blog(
+    "http://yuguo.us/",
+    entry_tag='p',
+    is_single_page=False,
+)
+for index, article in enumerate(b10.get_all_articles(), 1):
+    print index,
+    article.to_hexo(
+        content_class='single-post',
+    )
+print ""
 
 b11 = blog2md.Blog(
     "https://blog.phoenixlzx.com/page/",
@@ -147,5 +146,17 @@ for index, article in enumerate(b11.get_all_articles(), 1):
     print index,
     article.to_hexo(
         content_class='entry',
+    )
+print ""
+
+b12 = blog2md.Blog(
+    "http://blog.daimajia.com/page/",
+    entry_tag='h1',
+    entry_class='entry-title',
+)
+for index, article in enumerate(b12.get_all_articles(), 1):
+    print index,
+    article.to_hexo(
+        content_class='entry-content',
     )
 print ""

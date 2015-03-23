@@ -7,7 +7,7 @@ tags: [Django, ]
 description: 在 settings.py 的最后一行你可以看到 STATIC_URL = '/static/' 这句话，在其后面加上：
 
 ---
-在 settings.py 的最后一行你可以看到 ` STATIC_URL = '/static/' ` 这句话，在其后面加上： 
+在 settings.py 的最后一行你可以看到 `STATIC_URL = '/static/'` 这句话，在其后面加上：
     
     
     STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static')
@@ -24,15 +24,15 @@ description: 在 settings.py 的最后一行你可以看到 STATIC_URL = '/stati
   
 ---  
   
-然后把你的 css/js/images 那些文件夹都丢进 static 文件夹中（此文件夹应建立在你的 view.py 所在目录下）   
-模板里面这么写： 
+然后把你的 css/js/images 那些文件夹都丢进 static 文件夹中（此文件夹应建立在你的 view.py 所在目录下）  
+模板里面这么写：
     
     
     <link type="text/css" rel="stylesheet" href="/static/css/login.css">  
   
 ---  
   
-如果设置之后出现了与 Unicode 有关的错误，打开 ` /Python27/Lib/mimetypes.py ` ，在 import 语句之后加入： 
+如果设置之后出现了与 Unicode 有关的错误，打开 `/Python27/Lib/mimetypes.py`，在 import 语句之后加入：
     
     
     if sys.getdefaultencoding() != 'gbk':
