@@ -127,7 +127,7 @@ print ""
 b10 = blog2md.Blog(
     "http://yuguo.us/",
     entry_tag='p',
-    is_single_page=False,
+    is_single_page=True,
 )
 for index, article in enumerate(b10.get_all_articles(), 1):
     print index,

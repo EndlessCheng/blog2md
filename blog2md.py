@@ -35,6 +35,7 @@ _COMMON_EXTRACT_PAIR_LIST = [
     ('p', 'article-author'),
     ('p', 'article-time'),
     ('a', 'post_header_link'),
+    ('span', 'post-meta'),
 
     ('img', 'code_img_closed'),
     ('img', 'code_img_opened'),  # cnblogs
@@ -131,7 +132,8 @@ class Blog:
             start_page = self.start_page
             url_set = set()
             while start_page:
-                entry_soup_list = self._get_all_entry_soup(self._get_page_url(start_page))
+                url = self._get_page_url(start_page)
+                entry_soup_list = self._get_all_entry_soup(url)
                 if not entry_soup_list:
                     print u"所有文章已下载完毕"
                     return
