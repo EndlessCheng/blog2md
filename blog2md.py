@@ -195,7 +195,7 @@ class Article:
         if time_class is None:
             time_soup = self.soup.find(datetime=True)
             if time_soup is None:
-                return datetime.now()
+                return str(datetime.now())
             return time_soup['datetime']
         time_soup = self.soup.find(class_=time_class) or self.soup.find(id=time_class)
         if time_attr is None:
@@ -203,8 +203,10 @@ class Article:
         return time_soup[time_attr]
 
     def _get_hexo_date(self, *args):
-        dt = parser.parse(self._get_date(*args))
-        return dt.astimezone(tz.tzlocal()).strftime('%Y-%m-%d %H:%M:%S')
+        date = parser.parse(self._get_date(*args))
+        if date.tzname():
+            date = date.astimezone(tz.tzlocal())
+        return date.strftime('%Y-%m-%d %H:%M:%S')
 
     def _get_hexo_head(self, title, time_class, time_attr, tag_class):
         head = "title: %s\n\n" % title

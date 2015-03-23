@@ -16,19 +16,19 @@ import blog2md
 #     )
 # print ""
 
-b2 = blog2md.Blog(
-    "https://www.byvoid.com/blog/page/",
-    entry_tag='section',
-    entry_class='entry-body entry-body-content',
-)
-for index, article in enumerate(b2.get_all_articles(), 1):
-    print index,
-    article.to_hexo(
-        content_tag='section',
-        content_class='entry-body entry-body-content',
-        tag_class='entry-meta',
-    )
-print ""
+# b2 = blog2md.Blog(
+#     "https://www.byvoid.com/blog/page/",
+#     entry_tag='section',
+#     entry_class='entry-body entry-body-content',
+# )
+# for index, article in enumerate(b2.get_all_articles(), 1):
+#     print index,
+#     article.to_hexo(
+#         content_tag='section',
+#         content_class='entry-body entry-body-content',
+#         tag_class='entry-meta',
+#     )
+# print ""
 
 # FIXME: test verify
 # b3 = blog2md.Blog(
@@ -44,6 +44,7 @@ print ""
 
 b4 = blog2md.Blog(
     "http://www.wdk.pw/page/",
+    start_page=5
 )
 for index, article in enumerate(b4.get_all_articles(), 1):
     print index,
