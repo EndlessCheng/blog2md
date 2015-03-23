@@ -1,5 +1,5 @@
 # blog2md
-Translate your blog articles to markdown files!
+Translate your blog articles to markdown files!(Support [Hexo](http://hexo.io/) now)
 
 # How to use
 ```python
