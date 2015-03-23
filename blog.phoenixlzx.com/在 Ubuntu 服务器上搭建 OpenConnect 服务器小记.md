@@ -1,21 +1,21 @@
 title: 在 Ubuntu 服务器上搭建 OpenConnect 服务器小记
 
-date: 2014-07-21T05:21:57.000Z
+date: 2014-07-21 13:21:57
 
 tags: [Server, Ubuntu, Linux, Network, VPN, iptables, ]
 
 description: 
 
 ---
-最近猫给推荐的 Cisco AnyConnect，面基的时候也看到 Aveline 菊苣在用 AnyConnect(插嘴：正太菊苣果然好可爱！！！) 于是自己折腾了下。作为少有的能让我折腾起来的 VPN，暂且把搭建步骤简单记录下。 
+最近猫给推荐的 Cisco AnyConnect，面基的时候也看到 Aveline 菊苣在用 AnyConnect(插嘴：正太菊苣果然好可爱！！！) 于是自己折腾了下。作为少有的能让我折腾起来的 VPN，暂且把搭建步骤简单记录下。
 
-AnyConnect 的好处是基于 HTTPS，证书可以申请 StartSSL 的，而且配置也不很复杂。另外配置文件里发现了很多专门为商业化/企业服务定制的选项，例如最大同时在线客户端数量，同账户最大在线设备数量等等。 
+AnyConnect 的好处是基于 HTTPS，证书可以申请 StartSSL 的，而且配置也不很复杂。另外配置文件里发现了很多专门为商业化/企业服务定制的选项，例如最大同时在线客户端数量，同账户最大在线设备数量等等。
 
-OpenConnect 是 AnyConnect 的开源实现。目前 0.8.0 版本需要 GnuTLS 3.1 以上版本，所以我们就直接在 Ubuntu 14.04 中搭建。另外 就算是基于 HTTPS，这货也是要用 TUN 设备的，所以 OpenVZ 用户们请注意。 
+OpenConnect 是 AnyConnect 的开源实现。目前 0.8.0 版本需要 GnuTLS 3.1 以上版本，所以我们就直接在 Ubuntu 14.04 中搭建。另外 就算是基于 HTTPS，这货也是要用 TUN 设备的，所以 OpenVZ 用户们请注意。
 
-###  准备 
+### 准备
 
-命令 
+命令
     
     
     apt-get install build-essential libwrap0-dev libpam0g-dev libdbus-1-dev \
@@ -26,9 +26,9 @@ OpenConnect 是 AnyConnect 的开源实现。目前 0.8.0 版本需要 GnuTLS 3.
   
 ---  
   
-###  安装 
+### 安装
 
-下载源码 
+下载源码
     
     
     wget -c ftp://ftp.infradead.org/pub/ocserv/ocserv-0.8.0.tar.xz
@@ -39,7 +39,7 @@ OpenConnect 是 AnyConnect 的开源实现。目前 0.8.0 版本需要 GnuTLS 3.
   
 ---  
   
-编译安装 
+编译安装
     
     
     ./configure --prefix=/opt/ocserv 
@@ -54,11 +54,11 @@ OpenConnect 是 AnyConnect 的开源实现。目前 0.8.0 版本需要 GnuTLS 3.
   
 ---  
   
-###  配置 
+### 配置
 
-这里只记录需要修改的重点配置，其他配置请参照样例配置文件的注释按需修改。 
+这里只记录需要修改的重点配置，其他配置请参照样例配置文件的注释按需修改。
 
-文件 ` /opt/ocserv/etc/config `
+文件 `/opt/ocserv/etc/config`
     
     
     auth = "plain[/opt/ocserv/etc/passwd]"
@@ -93,26 +93,26 @@ OpenConnect 是 AnyConnect 的开源实现。目前 0.8.0 版本需要 GnuTLS 3.
   
 ---  
   
-创建用户，命令 
+创建用户，命令
     
     
     /opt/ocserv/bin/ocpasswd -c /opt/ocserv/etc/passwd username  
   
 ---  
   
-按提示输入两次密码。 
+按提示输入两次密码。
 
-iptables 规则 
+iptables 规则
     
     
     iptables -t nat -A POSTROUTING -j SNAT --to-source <server ip> -o <nic>  
   
 ---  
   
-记得把 ` <server ip> ` 和 ` <nic> ` 改为服务器公网 IP 和对应网卡的名称。 
+记得把 `<server ip>` 和 `<nic>` 改为服务器公网 IP 和对应网卡的名称。
 
-###  搞定 
+### 搞定
 
-折腾完毕，AnyConnect 客户端可以成功使用了。 
+折腾完毕，AnyConnect 客户端可以成功使用了。
 
-<del> 不过呢折腾完之后发现这货其实被干扰得很厉害啊… </del>
+<del>不过呢折腾完之后发现这货其实被干扰得很厉害啊…</del>

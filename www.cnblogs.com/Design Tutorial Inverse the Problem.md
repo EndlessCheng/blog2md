@@ -1,17 +1,17 @@
 title: Design Tutorial Inverse the Problem
 
-date: 2014-10-06 16:00
+date: 2014-10-06 16:00:00
 
 tags: []
 
 description: 
 
 ---
-[ Codeforces Round #270 ](http://codeforces.com/contest/472) D: [ http://codeforces.com/contest/472/problem/D ](http://codeforces.com/contest/472/problem/D)
+[Codeforces Round #270](http://codeforces.com/contest/472) D:<http://codeforces.com/contest/472/problem/D>
 
-题意：给以一张图，用邻接矩阵表示，现在问你这张图能不能够是一棵树？(并且边权都是正的) 
+题意：给以一张图，用邻接矩阵表示，现在问你这张图能不能够是一棵树？(并且边权都是正的)
 
-题解：看了题解才知道。如果这张图是一棵树的话，那么最小生成树一定满足条件。所以可以这样解，求一颗生成树，然后在生成树每个点DFS，求出任意两点之间的距离，看看这两点之间距离在原来的矩阵中，是否一致，如果都是一致的，则说明是可以的，否则就不行。 
+题解：看了题解才知道。如果这张图是一棵树的话，那么最小生成树一定满足条件。所以可以这样解，求一颗生成树，然后在生成树每个点DFS，求出任意两点之间的距离，看看这两点之间距离在原来的矩阵中，是否一致，如果都是一致的，则说明是可以的，否则就不行。
     
     
       1 #include<iostream>
@@ -128,3 +128,5 @@ description:
     112         puts("YES\n");
     113 
     114 }
+
+ 

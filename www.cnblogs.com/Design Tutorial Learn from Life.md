@@ -1,17 +1,17 @@
 title: Design Tutorial Learn from Life
 
-date: 2014-10-06 18:01
+date: 2014-10-06 18:01:00
 
 tags: []
 
 description: 
 
 ---
-[ Codeforces Round #270 ](http://codeforces.com/contest/472) B: [ http://codeforces.com/contest/472/problem/B ](http://codeforces.com/contest/472/problem/B)
+[Codeforces Round #270](http://codeforces.com/contest/472) B:<http://codeforces.com/contest/472/problem/B>
 
-题意：n个人在1楼，想要做电梯上楼，只有1个电梯，每次只能运k个人，每移动一层需要1秒。问最小的是时间把所有人送到想去的楼层。 
+题意：n个人在1楼，想要做电梯上楼，只有1个电梯，每次只能运k个人，每移动一层需要1秒。问最小的是时间把所有人送到想去的楼层。
 
-题解：贪心，每次选择楼层数最大k个人，用优先队列维护一下即可。 
+题解：贪心，每次选择楼层数最大k个人，用优先队列维护一下即可。
     
     
      1 #include<iostream>
@@ -40,3 +40,5 @@ description:
     24      ans+=(Q.top()-1);
     25    printf("%d\n",ans*2);
     26 }
+
+ 

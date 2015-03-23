@@ -1,13 +1,13 @@
 title: UVa 11178 Morley's Theorem (向量旋转)
 
-date: 2014-03-27 16:35
+date: 2014-03-27 16:35:00
 
 tags: [ACM, C++, 算法, 计算几何, uva, ]
 
 description: 
 
 ---
-[ http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2119 ](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2119)
+[http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2119](http://uva.onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=2119)
 
   
 

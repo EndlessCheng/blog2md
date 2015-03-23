@@ -18,7 +18,7 @@ sys.setdefaultencoding('utf-8')
 
 _INVALID_CHAR_LIST = '\\/:*?"<>|\r\n'
 _HEADERS = {
-    'User-Agent': "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:34.0) Gecko/20100101 Firefox/34.0",
+    'User-Agent': "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Maxthon/4.4.3.4000 Chrome/30.0.1599.101 Safari/537.36",
 }
 _COMMON_EXTRACT_PAIR_LIST = [
     ('div', 'article_manage'),
@@ -156,7 +156,7 @@ class Blog:
         except requests.HTTPError:
             print u"所有文章已下载完毕"
         except requests.ConnectionError:
-            print u"网络异常，解析中断"
+            print u"网络异常，解析中断（可能是访问过于频繁导致）"
 
 
 class Article:
@@ -251,7 +251,6 @@ class Article:
         if not os.path.isdir(dir_path):
             os.makedirs(dir_path)
         file_name = self.title if self.title is not None else self._get_file_name(title_class, title_extract_tag)
-        # print file_name
         file_path = os.path.join(dir_path, file_name.encode('gbk') + ".md")  # if platform.system() == 'Windows':
         f = open(file_path, 'w')
         if tag_class is None:

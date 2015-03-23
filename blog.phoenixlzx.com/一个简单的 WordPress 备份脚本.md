@@ -1,17 +1,17 @@
 title: 一个简单的 WordPress 备份脚本
 
-date: 2014-02-11T12:08:56.000Z
+date: 2014-02-11 20:08:56
 
 tags: [WordPress, Script, Server, ]
 
 description: 
 
 ---
-居然会有人问我要这个东西… 我最不会写脚本了好吧呀！ 
+居然会有人问我要这个东西… 我最不会写脚本了好吧呀！
 
-<del> 真心觉得这货 Google 一下粗来一大坨 </del>
+<del>真心觉得这货 Google 一下粗来一大坨</del>
 
-嘛不多说了.. 既然写了就发粗来让大家吐槽一下好了… 不光是 WordPress.. 只要是静态文件+MySQL的站都可以用。 
+嘛不多说了.. 既然写了就发粗来让大家吐槽一下好了… 不光是 WordPress.. 只要是静态文件+MySQL的站都可以用。
     
     
     #!/bin/bash
@@ -82,14 +82,14 @@ description:
   
 ---  
   
-真心的没有用到任何… 高级的东西。 
+真心的没有用到任何… 高级的东西。
 
-保存为文件 ` /root/backup.sh ` 然后修改下前面几个变量，以 root 用户新建 cronjob 
+保存为文件 `/root/backup.sh` 然后修改下前面几个变量，以 root 用户新建 cronjob
 
-` crontab -e ` 然后敲 
+`crontab -e` 然后敲
 
-` 00 01 * * 1 /root/backup.sh `
+`00 01 * * 1 /root/backup.sh`
 
-保存。这样每周一的凌晨1点(当然是你的服务器时间..) 就会自动备份到 ` /root/backup/backups ` 下。懒得写自动删除… 于是手动删好了。 
+保存。这样每周一的凌晨1点(当然是你的服务器时间..) 就会自动备份到 `/root/backup/backups` 下。懒得写自动删除… 于是手动删好了。
 
-<del> 我要是被猫菊苣笑话了某人你可死定了 </del>
+<del>我要是被猫菊苣笑话了某人你可死定了</del>

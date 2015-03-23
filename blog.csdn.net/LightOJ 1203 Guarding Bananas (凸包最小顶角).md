@@ -1,13 +1,13 @@
 title: LightOJ 1203 Guarding Bananas (凸包最小顶角)
 
-date: 2014-03-26 17:52
+date: 2014-03-26 17:52:00
 
 tags: [ACM, C++, lightoj, 计算几何, 凸包, ]
 
 description: 
 
 ---
-[ http://lightoj.com/volume_showproblem.php?problem=1203 ](http://lightoj.com/volume_showproblem.php?problem=1203)
+<http://lightoj.com/volume_showproblem.php?problem=1203>
 
   
 

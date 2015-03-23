@@ -1,13 +1,13 @@
 title: LightOJ 1255 Substring Frequency (KMP模板)
 
-date: 2014-03-26 23:27
+date: 2014-03-26 23:27:00
 
 tags: [ACM, C++, lightoj, kmp, 算法, ]
 
 description: 
 
 ---
-[ http://lightoj.com/volume_showproblem.php?problem=1255 ](http://lightoj.com/volume_showproblem.php?problem=1255)
+<http://lightoj.com/volume_showproblem.php?problem=1255>
 
   
 

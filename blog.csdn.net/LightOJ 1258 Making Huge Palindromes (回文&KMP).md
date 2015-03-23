@@ -1,25 +1,25 @@
 title: LightOJ 1258 Making Huge Palindromes (回文&KMP)
 
-date: 2014-03-27 13:40
+date: 2014-03-27 13:40:00
 
 tags: [ACM, C++, lightoj, kmp, 算法, ]
 
 description: 
 
 ---
-[ http://lightoj.com/volume_showproblem.php?problem=1258 ](http://lightoj.com/volume_showproblem.php?problem=1258)
+<http://lightoj.com/volume_showproblem.php?problem=1258>
 
   
 
 
-首先原串+翻转过来的串必然是一个回文串，但是二者在中间可以“融合”，而KMP算法恰好可以求出最大融合长度。 
+首先原串+翻转过来的串必然是一个回文串，但是二者在中间可以“融合”，而KMP算法恰好可以求出最大融合长度。
 
-所以看翻转过来的串能匹配多少原串即可，答案就是len+(len-匹配个数)。 
+所以看翻转过来的串能匹配多少原串即可，答案就是len+(len-匹配个数)。
 
   
 
 
-完整代码：   
+完整代码：  
 
     
     

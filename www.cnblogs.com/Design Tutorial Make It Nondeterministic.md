@@ -1,17 +1,17 @@
 title: Design Tutorial Make It Nondeterministic
 
-date: 2014-10-06 17:31
+date: 2014-10-06 17:31:00
 
 tags: []
 
 description: 
 
 ---
-[ Codeforces Round #270 ](http://codeforces.com/contest/472) :C; [ http://codeforces.com/contest/472 ](http://codeforces.com/contest/472)
+[Codeforces Round #270](http://codeforces.com/contest/472):C;<http://codeforces.com/contest/472>
 
-题意：水题 
+题意：水题
 
-题解：贪心即可。 
+题解：贪心即可。
     
     
      1 #include<iostream>
@@ -101,3 +101,5 @@ description:
     85         puts("YES");
     86 
     87 }
+
+ 

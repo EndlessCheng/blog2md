@@ -1,13 +1,13 @@
 title: 使用 Express.js 和 Formidable 上传文件
 
-date: 2014-02-17T11:49:22.000Z
+date: 2014-02-17 19:49:22
 
 tags: [Node.js, ]
 
 description: 
 
 ---
-写 [ 之前一篇文章 ](/2014/02/06/directshare-a-simple-file-sharing-using-direct-http-links/) 时发现 Express.js 更新到 3.4.x 了，运行的时候出现警告 
+写 [之前一篇文章](/2014/02/06/directshare-a-simple-file-sharing-using-direct-http-links/) 时发现 Express.js 更新到 3.4.x 了，运行的时候出现警告
     
     
     connect.multipart() will be removed in connect 3.0
@@ -18,22 +18,22 @@ description:
   
 ---  
   
-按照 Wiki 的指引看了下 ` multiparty ` ， ` connect-multiparty ` 和 ` formidable ` ，最终选用了 ` formidable ` <del> 因为说明看起来很碉堡的样子 </del>
+按照 Wiki 的指引看了下 `multiparty`，`connect-multiparty` 和 `formidable`，最终选用了 `formidable` <del>因为说明看起来很碉堡的样子</del>
 
-简单写了两个路由控制，按照 [ node-formidable ](https://github.com/felixge/node-formidable) 的示例加上了打印文件上传信息的几个语句，运行时发现程序 hang 了… 
+简单写了两个路由控制，按照 [node-formidable](https://github.com/felixge/node-formidable) 的示例加上了打印文件上传信息的几个语句，运行时发现程序 hang 了…
 
-Google 许久无果——找到的结果基本都是要你注释掉 ` app.use(express.bodyParser()) ` ，而我已经是 express 3.4 所以早就没有 bodyParser 了。回去又看 formidable 给的例子，于是发现自己犯二了…—— 
+Google 许久无果——找到的结果基本都是要你注释掉 `app.use(express.bodyParser())`，而我已经是 express 3.4 所以早就没有 bodyParser 了。回去又看 formidable 给的例子，于是发现自己犯二了…——
     
     
     <form action="/upload" enctype="multipart/form-data" method="post">  
   
 ---  
   
-真是个バカ！ 
+真是个バカ！
 
-立马给 ` index.ejs ` 中的 form 部分加上了 ` enctype="multipart/form-data" ` ，重试，成功。 <del> 于是就这么解决了 </del> (被打飞 
+立马给 `index.ejs` 中的 form 部分加上了 `enctype="multipart/form-data"`，重试，成功。 <del>于是就这么解决了</del>(被打飞
 
-主程序 
+主程序
     
     
     /**
@@ -114,7 +114,7 @@ Google 许久无果——找到的结果基本都是要你注释掉 ` app.use(ex
   
 ---  
   
-以及一个简单的 ` index.ejs `
+以及一个简单的 `index.ejs`
     
     
     <!DOCTYPE html>
@@ -149,4 +149,4 @@ Google 许久无果——找到的结果基本都是要你注释掉 ` app.use(ex
   
 ---  
   
-PS. [ 后来发现确实有人遇到这个问题了… ](http://stackoverflow.com/a/5543851)
+PS. [后来发现确实有人遇到这个问题了…](http://stackoverflow.com/a/5543851)

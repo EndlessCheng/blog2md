@@ -1,13 +1,13 @@
 title: LightOJ 1062 Crossed Ladders (二分)
 
-date: 2014-03-26 18:57
+date: 2014-03-26 18:57:00
 
 tags: [ACM, C++, 二分, 算法, lightoj, ]
 
 description: 
 
 ---
-[ http://lightoj.com/volume_showproblem.php?problem=1062 ](http://lightoj.com/volume_showproblem.php?problem=1062)
+<http://lightoj.com/volume_showproblem.php?problem=1062>
 
   
 

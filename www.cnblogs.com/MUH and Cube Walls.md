@@ -1,17 +1,17 @@
 title: MUH and Cube Walls
 
-date: 2014-10-08 22:25
+date: 2014-10-08 22:25:00
 
 tags: []
 
 description: 
 
 ---
-[ Codeforces Round #269 (Div. 2) ](http://codeforces.com/contest/471) D: [ http://codeforces.com/problemset/problem/471/D ](http://codeforces.com/problemset/problem/471/D)
+[Codeforces Round #269 (Div. 2)](http://codeforces.com/contest/471) D:<http://codeforces.com/problemset/problem/471/D>
 
-题意：给定两个序列a ,b, 如果在a中存在一段连续的序列使得a[i]-b[0]==k, a[i+1]-b[1]==k.... a[i+n-1]-b[n-1]==k,就说b串在a串中出现过！最后输出b串在a串中出现几次！ 
+题意：给定两个序列a ,b, 如果在a中存在一段连续的序列使得a[i]-b[0]==k, a[i+1]-b[1]==k.... a[i+n-1]-b[n-1]==k,就说b串在a串中出现过！最后输出b串在a串中出现几次！
 
-题解：把两个串进行处理，相邻项之间做差，然后就很容易想到用KMP来搞，然后注意几个特判就行。 
+题解：把两个串进行处理，相邻项之间做差，然后就很容易想到用KMP来搞，然后注意几个特判就行。
     
     
      1 #include<cstdio>
@@ -89,3 +89,5 @@ description:
     73       printf("%d\n",ans);
     74       }
     75 }
+
+ 
