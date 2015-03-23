@@ -1,7 +1,7 @@
 # blog2md
 Translate your blog articles to markdown files! (Support [Hexo](http://hexo.io/) now)
 
-# How to use
+## How to use
 ```python
 import blog2md
 
@@ -24,7 +24,7 @@ Result:
 
 See [test.py](https://github.com/EndlessCheng/blog2md/blob/master/test.py) for more details.
 
-# Notice
+## Notice
 There is a BUG in `html2text/config.py`:
 
 ```python
@@ -33,3 +33,7 @@ BODY_WIDTH = 78
 ```
 
 Change 78 to 0 to disable wrapping before you run.
+
+## License
+
+MIT
