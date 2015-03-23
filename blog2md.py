@@ -8,6 +8,7 @@ import requests
 from html2text import html2text
 
 from datetime import datetime
+from dateutil import parser, tz
 import os
 import platform
 import sys
@@ -189,7 +190,7 @@ class Article:
         """
         return now() when can't find date
 
-        :return:
+        :return: date
         """
         if time_class is None:
             time_soup = self.soup.find(datetime=True)
@@ -201,9 +202,13 @@ class Article:
             return " ".join(list(time_soup.stripped_strings))
         return time_soup[time_attr]
 
+    def _get_hexo_date(self, *args):
+        dt = parser.parse(self._get_date(*args))
+        return dt.astimezone(tz.tzlocal()).strftime('%Y-%m-%d %H:%M:%S')
+
     def _get_hexo_head(self, title, time_class, time_attr, tag_class):
         head = "title: %s\n\n" % title
-        head += "date: %s\n\n" % self._get_date(time_class, time_attr)
+        head += "date: %s\n\n" % self._get_hexo_date(time_class, time_attr)
         head += "tags: ["
         tags_soup = self.soup.find(class_=tag_class) or self.soup.find(id=tag_class)
         if tags_soup is not None:

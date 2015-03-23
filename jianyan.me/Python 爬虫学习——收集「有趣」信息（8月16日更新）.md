@@ -1,17 +1,17 @@
 title: Python 爬虫学习——收集「有趣」信息（8月16日更新）
 
-date: 2014-06-24T13:30:00.000Z
+date: 2014-06-24 21:30:00
 
 tags: [Python, 爬虫, GitHub, ]
 
 description: 从获取 GitHub 等网站的我们感兴趣的信息开始，学习 Python 爬虫的使用方法。
 
 ---
-我们使用 urllib2 这个组件来抓取网页，这是 Python 的一个获取 URLs (Uniform Resource Locators)的组件，它以 urlopen 函数的形式提供了一个非常简单的接口。 
+我们使用 urllib2 这个组件来抓取网页，这是 Python 的一个获取 URLs (Uniform Resource Locators)的组件，它以 urlopen 函数的形式提供了一个非常简单的接口。
 
-以获取某 <del> id 为 EndlessCheng </del> 用户的 repository 列表为例： 
+以获取某 <del>id 为 EndlessCheng</del> 用户的 repository 列表为例：
 
-（阅读下面代码之前建议先看看 [ 该页面 ](https://github.com/EndlessCheng?tab=repositories) 的源码） 
+（阅读下面代码之前建议先看看 [该页面](https://github.com/EndlessCheng?tab=repositories) 的源码）
     
     
     # -*- coding: UTF-8 -*-
@@ -48,16 +48,16 @@ description: 从获取 GitHub 等网站的我们感兴趣的信息开始，学�
   
 ---  
   
-源网页： 
+源网页：
 
 ![](http://endless.qiniudn.com/blogrepo.png)
 
-输出结果： 
+输出结果：
 
 ![](http://endless.qiniudn.com/blogoutput.png)
 
-出于项目维护的需要，写了一个获取 Commits 列表的爬虫：   
-（晕，代码中的 EscapeCharacterDict 的转义字符被直接转换了，可以去 [ 原项目 ](https://github.com/EndlessCheng/Commits-Crawler/blob/master/Core.py) 查看） 
+出于项目维护的需要，写了一个获取 Commits 列表的爬虫：  
+（晕，代码中的 EscapeCharacterDict 的转义字符被直接转换了，可以去 [原项目](https://github.com/EndlessCheng/Commits-Crawler/blob/master/Core.py) 查看）
     
     
     # -*- coding: UTF-8 -*-

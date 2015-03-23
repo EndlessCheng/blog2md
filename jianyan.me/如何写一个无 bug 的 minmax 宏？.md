@@ -1,6 +1,6 @@
 title: 如何写一个无 bug 的 minmax 宏？
 
-date: 2014-11-01T13:30:00.000Z
+date: 2014-11-01 21:30:00
 
 tags: [C, macro, GHC, ]
 

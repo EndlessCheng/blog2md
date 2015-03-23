@@ -1,6 +1,6 @@
 title: GitHub 秘籍
 
-date: 2014-09-23T13:30:00.000Z
+date: 2014-09-23 21:30:00
 
 tags: [Git, GitHub, Markdown, ]
 

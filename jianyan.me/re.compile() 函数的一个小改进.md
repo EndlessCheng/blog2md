@@ -1,6 +1,6 @@
 title: re.compile() 函数的一个小改进
 
-date: 2015-03-19T13:35:00.000Z
+date: 2015-03-19 21:35:00
 
 tags: [Python, 正则表达式, ]
 

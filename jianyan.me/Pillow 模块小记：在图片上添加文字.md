@@ -1,6 +1,6 @@
 title: Pillow 模块小记：在图片上添加文字
 
-date: 2014-12-09T09:00:00.000Z
+date: 2014-12-09 17:00:00
 
 tags: [Pillow, PIL, Python, ]
 

@@ -1,6 +1,6 @@
 title: Django 中设置 cssjsimages 路径的方法
 
-date: 2014-09-18T13:30:00.000Z
+date: 2014-09-18 21:30:00
 
 tags: [Django, ]
 

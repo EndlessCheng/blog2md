@@ -1,6 +1,6 @@
 title: 如何在 SAE 上正确地设置 Django 静态文件
 
-date: 2014-12-29T11:00:00.000Z
+date: 2014-12-29 19:00:00
 
 tags: [Django, SAE, ]
 
