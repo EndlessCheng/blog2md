@@ -213,7 +213,8 @@ class Article:
         tags_soup = self.soup.find(class_=tag_class) or self.soup.find(id=tag_class)
         if tags_soup is not None:
             for tag in tags_soup.find_all('a'):
-                head += tag.string + ", "
+                if tag.string:  # some blogs have empty <a> in tags list...
+                    head += tag.string + ", "
         head += "]\n\n"
         head += "description: %s\n\n---\n" % self.description
         return head

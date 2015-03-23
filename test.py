@@ -1,20 +1,20 @@
 # -*- coding:utf-8 -*-
 import blog2md
 
-b = blog2md.Blog(
-    "http://jianyan.me/page/",
-    first_page_url="http://jianyan.me/",
-    entry_tag='section',
-    entry_class='post',
-    description_tag='p',
-)
-for index, article in enumerate(b.get_all_articles(), 1):
-    print index,
-    article.to_hexo(
-        content_class='article-content',
-        tag_class='article-tags',
-    )
-print ""
+# b = blog2md.Blog(
+#     "http://jianyan.me/page/",
+#     first_page_url="http://jianyan.me/",
+#     entry_tag='section',
+#     entry_class='post',
+#     description_tag='p',
+# )
+# for index, article in enumerate(b.get_all_articles(), 1):
+#     print index,
+#     article.to_hexo(
+#         content_class='article-content',
+#         tag_class='article-tags',
+#     )
+# print ""
 
 b2 = blog2md.Blog(
     "https://www.byvoid.com/blog/page/",
