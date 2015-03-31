@@ -8,7 +8,8 @@ import requests
 from html2text import html2text
 
 from datetime import datetime
-from dateutil import parser, tz
+from dateutil import parser
+from dateutil import tz
 import os
 import platform
 import sys
