@@ -77,7 +77,7 @@ class Blog:
                  entry_tag='article', entry_class=None, entry_title_tag='a', entry_title_class=None,
                  description_tag=None, description_class=None):
         """
-        :param first_page_url: set this when he first page return 404 and the home page isn't the netloc
+        :param first_page_url: set this when the first page return 404 and the home page isn't the netloc
         """
         url_parse = urlparse.urlparse(url)
         self.netloc = url_parse.netloc
